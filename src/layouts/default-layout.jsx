@@ -10,6 +10,7 @@ import '../css/mdl-layout-custom.css'
 
 import WebFont from 'webfontloader';
 import React, {Component} from 'react';
+import { Link } from 'react-router';
 
 WebFont.load({
   google: {
@@ -47,20 +48,25 @@ class DefaultLayout extends Component<{}, {}, {}> {
         </header>
         <div className="mdl-layout__drawer">
           <span className="mdl-layout-title">K.K. POON</span>
-          <div class="mdl-layout-spacer"></div>
+          <div className="mdl-layout-spacer"></div>
           <nav className="mdl-navigation">
-            <a className="mdl-navigation__link mdl-navigation__link--icon"
-               href="">
+            <Link className="mdl-navigation__link mdl-navigation__link--icon"
+                  to="/home">
+              <i className="material-icons">home</i>
+              <span>Home</span>
+            </Link>
+            <Link className="mdl-navigation__link mdl-navigation__link--icon"
+                  to="/feature1">
               <i className="material-icons">dashboard</i>
               <span>Feature 1</span>
-            </a>
-            <a className="mdl-navigation__link mdl-navigation__link--icon"
-               href="">
+            </Link>
+            <Link className="mdl-navigation__link mdl-navigation__link--icon"
+                  to="/feature2">
               <i className="material-icons">donut_small</i>
               <span>Feature 2</span>
-            </a>
+            </Link>
           </nav>
-          <div class="mdl-layout-spacer"></div>
+          <div className="mdl-layout-spacer"></div>
           <nav className="mdl-navigation">
             <a className="mdl-navigation__link mdl-navigation__link--icon"
                href="">

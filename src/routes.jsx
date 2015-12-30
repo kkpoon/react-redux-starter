@@ -3,13 +3,15 @@
 import React from 'react';
 import {Router, Route, IndexRoute} from 'react-router';
 
-import Layout from './components/default-layout';
-import Home from './components/pages/home';
+import { DefaultLayout } from './layouts';
+import { Home, Feature1, Feature2 } from './pages';
 
 const ROUTES = (
-  <Route path="/" component={Layout}>
-    <Route path="home" component={Home} />
+  <Route path="/" component={DefaultLayout}>
     <IndexRoute component={Home} />
+    <Route path="home" component={Home} />
+    <Route path="feature1" component={Feature1} />
+    <Route path="feature2" component={Feature2} />
   </Route>
 );
 
