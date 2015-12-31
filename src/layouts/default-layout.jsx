@@ -10,7 +10,9 @@ import '../css/mdl-layout-custom.css'
 
 import WebFont from 'webfontloader';
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
+import d3 from 'd3';
 
 WebFont.load({
   google: {
@@ -24,6 +26,7 @@ WebFont.load({
 });
 
 class DefaultLayout extends Component<{}, {}, {}> {
+
   render(): ?ReactElement {
     return (
       <div className="mdl-layout mdl-js-layout">
@@ -46,38 +49,52 @@ class DefaultLayout extends Component<{}, {}, {}> {
             </div>
           </div>
         </header>
-        <div className="mdl-layout__drawer">
+        <div className="mdl-layout__drawer" ref="drawer">
           <span className="mdl-layout-title">K.K. POON</span>
-          <div className="mdl-layout-spacer"></div>
           <nav className="mdl-navigation">
-            <Link className="mdl-navigation__link mdl-navigation__link--icon"
-                  to="/home">
+            <Link
+              className="mdl-navigation__link mdl-navigation__link--icon"
+              to="/home"
+              onClick={e => this.handleNavLinkClick(e)}
+              >
               <i className="material-icons">home</i>
               <span>Home</span>
             </Link>
-            <Link className="mdl-navigation__link mdl-navigation__link--icon"
-                  to="/feature1">
+            <Link
+              className="mdl-navigation__link mdl-navigation__link--icon"
+              to="/feature1"
+              onClick={e => this.handleNavLinkClick(e)}
+              >
               <i className="material-icons">dashboard</i>
               <span>Feature 1</span>
             </Link>
-            <Link className="mdl-navigation__link mdl-navigation__link--icon"
-                  to="/feature2">
+            <Link
+              className="mdl-navigation__link mdl-navigation__link--icon"
+              to="/feature2"
+              onClick={e => this.handleNavLinkClick(e)}
+              >
               <i className="material-icons">donut_small</i>
               <span>Feature 2</span>
             </Link>
           </nav>
           <div className="mdl-layout-spacer"></div>
           <nav className="mdl-navigation">
-            <a className="mdl-navigation__link mdl-navigation__link--icon"
-               href="">
+            <Link
+              className="mdl-navigation__link mdl-navigation__link--icon"
+              to="/settings"
+              onClick={e => this.handleNavLinkClick(e)}
+              >
               <i className="material-icons">settings</i>
               <span>Settings</span>
-            </a>
-            <a className="mdl-navigation__link mdl-navigation__link--icon"
-               href="">
+            </Link>
+            <Link
+              className="mdl-navigation__link mdl-navigation__link--icon"
+              to="/logout"
+              onClick={e => this.handleNavLinkClick(e)}
+              >
               <i className="material-icons">exit_to_app</i>
               <span>Sign out</span>
-            </a>
+            </Link>
           </nav>
         </div>
         <main className="mdl-layout__content">
@@ -99,6 +116,13 @@ class DefaultLayout extends Component<{}, {}, {}> {
       </div>
     );
   }
+
+  handleNavLinkClick(e): void {
+    const drawer = this.refs.drawer;
+    d3.select(ReactDOM.findDOMNode(drawer)).classed("is-visible", false);
+    d3.select('.mdl-layout__obfuscator').classed("is-visible", false);
+  }
+
 }
 
 export default DefaultLayout;
