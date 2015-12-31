@@ -9,7 +9,7 @@
     "watch": "webpack --progress --colors --watch",
     "lite": "lite-server --baseDir ./public",
     "start": "concurrent \"npm run watch\" \"npm run lite\" ",
-    "test": "jest"
+    "test": "BABEL_JEST_STAGE=0 jest"
   },
   "repository": {
     "type": "git",
@@ -55,5 +55,27 @@
     "redux": "^3.0.5",
     "redux-simple-router": "^1.0.2",
     "webfontloader": "^1.6.16"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testRunner": "<rootDir>/node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/redux",
+      "<rootDir>/node_modules/fbjs"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "testFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
   }
 }
