@@ -39,6 +39,8 @@
     "jest-cli": "^0.8.2",
     "lite-server": "^1.3.2",
     "redux-devtools": "^3.0.1",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9"

@@ -1,13 +1,21 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var plugins = [
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }
+  })
+];
+
 module.exports = {
   entry: "./src/index.jsx",
   resolve: {
     extensions: ["", ".js", ".jsx"],
   },
   output: {
-    path: __dirname + '/public/lib',
+    path: path.resolve(__dirname, 'public/lib'),
     filename: "bundle.js"
   },
   module: {
@@ -26,5 +34,6 @@ module.exports = {
         loader: 'url-loader?limit=100000'
       }
     ]
-  }
+  },
+  plugins: plugins
 };
