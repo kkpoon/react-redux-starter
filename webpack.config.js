@@ -12,7 +12,7 @@ var plugins = [
 module.exports = {
   entry: "./src/index.jsx",
   resolve: {
-    extensions: ["", ".js", ".jsx"],
+    extensions: ["", ".js", ".jsx"]
   },
   output: {
     path: path.resolve(__dirname, 'public/lib'),

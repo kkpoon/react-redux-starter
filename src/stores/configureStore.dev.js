@@ -21,6 +21,6 @@ function configureStore(initialState) {
   syncReduxAndRouter(history, store);
   
   return {store, history};
-};
+}
 
 export default configureStore;
