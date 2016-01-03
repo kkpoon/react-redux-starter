@@ -1,19 +1,20 @@
+/* @flow */
+
 'use strict';
 
-import { UPDATE_GREETING, CLEAR_GREETING } from '../actions';
+import type { Action } from '../actions/greeting';
 
-function greeting(state = '', action) {
-  if (action) {
-    switch (action.type) {
-      case UPDATE_GREETING:
-        return action.message;
-      case CLEAR_GREETING:
-        return '';
-      default:
-        return state;
-    }
+type State = string;
+
+function greeting(state: State = '', action: Action): State {
+  switch (action.type) {
+    case "UPDATE_GREETING":
+      return action.message;
+    case "CLEAR_GREETING":
+      return '';
+    default:
+      return state;
   }
-  return state;
 }
 
 export default greeting;

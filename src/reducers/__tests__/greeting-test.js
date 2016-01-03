@@ -24,9 +24,4 @@ describe('greeting reducer', () => {
     expect(greeting('test4', action)).toBe('test4');
   });
 
-  it('should do nothing and return the input state when action is null', () => {
-    const action = null;
-    expect(greeting('test5', action)).toBe('test5');
-  });
-
 });

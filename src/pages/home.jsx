@@ -7,7 +7,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { updateGreeting, clearGreeting } from '../actions';
+import { updateGreeting, clearGreeting } from '../actions/greeting';
 
 import GreetingCard from '../components/greeting-card';
 
@@ -22,7 +22,7 @@ const Styles = {
   }
 }
 
-class HomePage extends Component<{}, {}, {}> {
+class HomePage extends Component {
   render(): ?ReactElement {
     const { dispatch, greetingMessage } = this.props;
     return (

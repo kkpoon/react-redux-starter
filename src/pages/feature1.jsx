@@ -28,7 +28,7 @@ const Styles = {
   }
 }
 
-class Feature1Page extends Component<{}, {}, {}> {
+class Feature1Page extends Component {
   render(): ?ReactElement {
     return (
       <div className="mdl-grid">

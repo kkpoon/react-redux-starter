@@ -1,6 +1,4 @@
-/*
- * @flow
- */
+/* @flow */
 
 'use strict';
 
@@ -22,7 +20,7 @@ const Styles = {
   }
 };
 
-class GreetingCard extends Component<{}, {}, {}> {
+class GreetingCard extends Component {
 
   render(): ?ReactElement {
     const { greetingMessage } = this.props;
@@ -63,7 +61,7 @@ class GreetingCard extends Component<{}, {}, {}> {
     );
   }
 
-  handleClearButtonClick(e) {
+  handleClearButtonClick(e: Event): void {
     const input = this.refs.gMsgInput;
     const field = this.refs.gMsgField;
     input.value = '';
@@ -71,7 +69,7 @@ class GreetingCard extends Component<{}, {}, {}> {
     this.props.onClearButtonClick();
   }
 
-  handleGreetMsgChange(e) {
+  handleGreetMsgChange(e: Event): void {
     const input = this.refs.gMsgInput;
     const msg = input.value.trim();
     this.props.onGreetingMessageChange(msg);

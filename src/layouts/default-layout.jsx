@@ -25,7 +25,7 @@ WebFont.load({
   timeout: 5000
 });
 
-class DefaultLayout extends Component<{}, {}, {}> {
+class DefaultLayout extends Component {
 
   render(): ?ReactElement {
     return (
@@ -117,7 +117,7 @@ class DefaultLayout extends Component<{}, {}, {}> {
     );
   }
 
-  handleNavLinkClick(e): void {
+  handleNavLinkClick(e: Event): void {
     const drawer = this.refs.drawer;
     d3.select(ReactDOM.findDOMNode(drawer)).classed("is-visible", false);
     d3.select('.mdl-layout__obfuscator').classed("is-visible", false);
