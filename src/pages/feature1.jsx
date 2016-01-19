@@ -17,14 +17,6 @@ const Styles = {
   },
   WelcomeCardMenu: {
     color: "white"
-  },
-  SideCardTitle: {
-    color: "white",
-    height: 80,
-    backgroundColor: "#46B6AC"
-  },
-  DataTable: {
-    width: "100%"
   }
 }
 

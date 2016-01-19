@@ -98,7 +98,7 @@ class DefaultLayout extends Component {
           </nav>
         </div>
         <main className="mdl-layout__content">
-          <div className="page-content">
+          <div className="page-content" style={{paddingTop: 30}}>
             {this.props.children}
           </div>
         </main>

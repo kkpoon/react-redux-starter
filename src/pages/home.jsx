@@ -11,17 +11,6 @@ import { updateGreeting, clearGreeting } from '../actions/greeting';
 
 import GreetingCard from '../components/greeting-card';
 
-const Styles = {
-  SideCardTitle: {
-    color: "white",
-    height: 80,
-    backgroundColor: "#46B6AC"
-  },
-  DataTable: {
-    width: "100%"
-  }
-}
-
 class HomePage extends Component {
   render(): ?ReactElement {
     const { dispatch, greetingMessage } = this.props;
