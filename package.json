@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "build": "webpack --progress --colors",
-    "dist": "webpack -p --progress --colors",
+    "dist": "NODE_ENV=production webpack -p --progress --colors",
     "watch": "webpack --progress --colors --watch",
-    "lite": "lite-server --baseDir ./public",
+    "lite": "lite-server",
     "start": "concurrent \"npm run watch\" \"npm run lite\" ",
     "flow": "flow",
     "flow-stop": "flow stop",
