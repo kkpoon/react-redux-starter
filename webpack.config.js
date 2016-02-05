@@ -12,7 +12,7 @@ var plugins = [
 module.exports = {
   entry: "./src/index.jsx",
   resolve: {
-    extensions: ["", ".ts", ".tsx", ".js", ".jsx"]
+    extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx"]
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -28,6 +28,10 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader'
+      },
+      {
+        test: /\.coffee$/,
+        loader: "coffee-loader"
       },
       {
         test: /\.css$/,
