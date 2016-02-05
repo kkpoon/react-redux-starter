@@ -1,8 +1,8 @@
-jest.dontMock('../greeting');
+jest.dontMock('../update');
+jest.dontMock('../clear');
 
-const greeting = require('../greeting');
-
-const { updateGreeting, clearGreeting } = greeting;
+const updateGreeting = require('../update').default;
+const clearGreeting = require('../clear').default;
 
 describe('actions', () => {
   it('should create an action to update greeting message', () => {

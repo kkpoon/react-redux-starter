@@ -2,7 +2,7 @@
 
 'use strict';
 
-import type { Action } from '../actions/greeting';
+import type { Action } from '../actions';
 
 type State = string;
 

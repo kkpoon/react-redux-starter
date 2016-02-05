@@ -7,7 +7,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { updateGreeting, clearGreeting } from '../actions/greeting';
+import greetingUpdate from '../actions/greeting/update';
+import greetingClear from '../actions/greeting/clear';
 
 import helloUpdate from '../actions/hello/update';
 import helloClear from '../actions/hello/clear';
@@ -26,8 +27,8 @@ class HomePage extends Component {
           <GreetingCard
             title="Greeting"
             greetingMessage={greetingMessage}
-            onGreetingMessageChange={msg => dispatch(updateGreeting(msg))}
-            onClearButtonClick={() => dispatch(clearGreeting())}
+            onGreetingMessageChange={msg => dispatch(greetingUpdate(msg))}
+            onClearButtonClick={() => dispatch(greetingClear())}
           />
         </div>
         <div className="mdl-cell mdl-cell--8-col">
