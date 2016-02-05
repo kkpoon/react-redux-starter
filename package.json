@@ -12,7 +12,7 @@
     "flow": "flow",
     "flow-stop": "flow stop",
     "test": "BABEL_JEST_STAGE=0 jest",
-    "mocha": "mocha --compilers js:babel-register,jsx:babel-register,coffee:coffee-script/register,ts:typescript-require,tsx:typescript-require src/**/*.spec.*"
+    "mocha": "mocha --compilers js:babel-register,jsx:babel-register,coffee:coffee-script/register,ts:espower-typescript/guess,tsx:espower-typescript/guess src/**/*.spec.*"
   },
   "repository": {
     "type": "git",
@@ -44,6 +44,7 @@
     "concurrently": "^1.0.0",
     "css-loader": "^0.23.1",
     "empty": "^0.10.1",
+    "espower-typescript": "^4.0.0",
     "file-loader": "^0.8.5",
     "flow-bin": "^0.20.1",
     "jest-cli": "^0.8.2",
@@ -55,7 +56,6 @@
     "style-loader": "^0.13.0",
     "ts-loader": "^0.8.0",
     "typescript": "^1.7.5",
-    "typescript-require": "^0.2.9-1",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9"
   },
