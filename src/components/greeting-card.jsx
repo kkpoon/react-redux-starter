@@ -23,11 +23,11 @@ const Styles = {
 class GreetingCard extends Component {
 
   render(): ?ReactElement {
-    const { greetingMessage } = this.props;
+    const { title, greetingMessage } = this.props;
     return (
       <div className="mdl-card mdl-shadow--2dp" style={Styles.Card}>
         <div className="mdl-card__title" style={Styles.CardTitle}>
-          <h2 className="mdl-card__title-text">Greeting</h2>
+          <h2 className="mdl-card__title-text">{title}</h2>
         </div>
         <div className="mdl-card__supporting-text">
           {greetingMessage}
@@ -77,6 +77,7 @@ class GreetingCard extends Component {
 }
 
 GreetingCard.propTypes = {
+  title: PropTypes.string.isRequired,
   greetingMessage: PropTypes.string.isRequired,
   onGreetingMessageChange: PropTypes.func.isRequired,
   onClearButtonClick: PropTypes.func.isRequired

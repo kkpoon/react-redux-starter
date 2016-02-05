@@ -1,5 +1,6 @@
 'use strict';
 
 import greeting from './greeting';
+import hello from './hello';
 
-export default { greeting };
+export default { greeting, hello };

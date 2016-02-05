@@ -9,18 +9,30 @@ import { connect } from 'react-redux';
 
 import { updateGreeting, clearGreeting } from '../actions/greeting';
 
+import helloUpdate from '../actions/hello/update';
+import helloClear from '../actions/hello/clear';
+
 import GreetingCard from '../components/greeting-card';
 
 class HomePage extends Component {
   render(): ?ReactElement {
-    const { dispatch, greetingMessage } = this.props;
+    const { dispatch, greetingMessage, helloMessage } = this.props;
     return (
       <div className="mdl-grid">
         <div className="mdl-cell mdl-cell--8-col">
           <GreetingCard
+            title="Greeting"
             greetingMessage={greetingMessage}
             onGreetingMessageChange={msg => dispatch(updateGreeting(msg))}
             onClearButtonClick={() => dispatch(clearGreeting())}
+          />
+        </div>
+        <div className="mdl-cell mdl-cell--8-col">
+          <GreetingCard
+            title="Hello"
+            greetingMessage={helloMessage}
+            onGreetingMessageChange={msg => dispatch(helloUpdate(msg))}
+            onClearButtonClick={() => dispatch(helloClear())}
           />
         </div>
         <div className="mdl-cell mdl-cell--4-col">
@@ -31,12 +43,14 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  greetingMessage: PropTypes.string.isRequired
+  greetingMessage: PropTypes.string.isRequired,
+  helloMessage: PropTypes.string.isRequired
 };
 
 function select(state) {
   return {
-    greetingMessage: state.greeting
+    greetingMessage: state.greeting,
+    helloMessage: state.hello
   };
 }
 

@@ -47,6 +47,8 @@
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.1",
     "style-loader": "^0.13.0",
+    "ts-loader": "^0.8.0",
+    "typescript": "^1.7.5",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9"
   },
