@@ -1,3 +1,3 @@
-import DefaultLayout from './default-layout';
+import DefaultMaterialDesignLayout from './default-md-layout';
 
-export { DefaultLayout };
+export { DefaultMaterialDesignLayout };

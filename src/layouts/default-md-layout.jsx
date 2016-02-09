@@ -4,9 +4,10 @@
 
 'use strict';
 
-import 'material-design-lite/material.min.css'
-import 'material-design-lite/material.min'
-import '../css/mdl-layout-custom.css'
+import 'material-design-lite/material.min.css';
+import 'material-design-lite/material.min';
+import '../themes/default-md/base';
+import '../themes/default-md/layout';
 
 import WebFont from 'webfontloader';
 import React, {Component} from 'react';

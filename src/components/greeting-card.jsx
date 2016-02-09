@@ -6,27 +6,16 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import d3 from 'd3';
 
-const Styles = {
-  Card: {
-    width: "100%"
-  },
-  CardTitle: {
-    color: "white",
-    height: 176,
-    backgroundColor: "#46B6AC"
-  },
-  CardMenu: {
-    color: "white"
-  }
-};
+import '../themes/default-md/components/greeting-card';
+
 
 class GreetingCard extends Component {
 
   render(): ?ReactElement {
     const { title, greetingMessage } = this.props;
     return (
-      <div className="mdl-card mdl-shadow--2dp" style={Styles.Card}>
-        <div className="mdl-card__title" style={Styles.CardTitle}>
+      <div className="mdl-card mdl-shadow--2dp card">
+        <div className="mdl-card__title title">
           <h2 className="mdl-card__title-text">{title}</h2>
         </div>
         <div className="mdl-card__supporting-text">
@@ -51,7 +40,7 @@ class GreetingCard extends Component {
             Clear
           </button>
         </div>
-        <div className="mdl-card__menu" style={Styles.CardMenu}>
+        <div className="mdl-card__menu menu">
           <button className="mdl-button mdl-button--icon mdl-js-button
                              mdl-js-ripple-effect">
             <i className="material-icons">share</i>

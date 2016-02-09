@@ -12,7 +12,7 @@ var plugins = [
 module.exports = {
   entry: "./src/index.jsx",
   resolve: {
-    extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx"]
+    extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx", ".less"]
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
@@ -32,6 +32,10 @@ module.exports = {
       {
         test: /\.coffee$/,
         loader: "coffee-loader"
+      },
+      {
+        test: /\.less$/,
+        loader: "style!css!less"
       },
       {
         test: /\.css$/,
