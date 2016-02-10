@@ -1,12 +1,6 @@
-/* @flow */
-
 'use strict';
 
-import type { Action } from '../actions';
-
-type State = string;
-
-function greeting(state: State = '', action: Action): State {
+function greeting(state = '', action) {
   switch (action.type) {
     case "UPDATE_GREETING":
       return action.message;

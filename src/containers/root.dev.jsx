@@ -12,9 +12,9 @@ import DevTools from '../containers/dev-tools';
 
 const {store, history} = configureStore();
 
-class Root extends Component<{}, {}, {}> {
+class Root extends Component {
 
-  render(): ?ReactElement {
+  render() {
     return (
       <Provider store={store}>
         <div>

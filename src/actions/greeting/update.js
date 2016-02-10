@@ -1,9 +1,5 @@
-/* @flow */
-
 'use strict';
 
-import type { Action } from "../";
-
-export default function(message: string): Action {
+export default function(message) {
   return { type: 'UPDATE_GREETING', message };
 }

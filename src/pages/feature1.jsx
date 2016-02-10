@@ -1,7 +1,3 @@
-/*
- * @flow
- */
-
 'use strict';
 
 import React, {Component} from 'react';
@@ -21,7 +17,7 @@ const Styles = {
 }
 
 class Feature1Page extends Component {
-  render(): ?ReactElement {
+  render() {
     return (
       <div className="mdl-grid">
         <div className="mdl-cell mdl-cell--8-col">

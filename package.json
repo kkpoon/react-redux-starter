@@ -9,8 +9,6 @@
     "watch": "webpack --progress --colors --watch",
     "lite": "lite-server",
     "start": "concurrent \"npm run watch\" \"npm run lite\" ",
-    "flow": "flow",
-    "flow-stop": "flow stop",
     "test": "BABEL_JEST_STAGE=0 jest",
     "mocha": "mocha --compilers js:babel-register,jsx:babel-register,coffee:coffee-script/register,ts:espower-typescript/guess,tsx:espower-typescript/guess src/**/*.spec.*"
   },
@@ -46,7 +44,6 @@
     "empty": "^0.10.1",
     "espower-typescript": "^4.0.0",
     "file-loader": "^0.8.5",
-    "flow-bin": "^0.20.1",
     "jest-cli": "^0.8.2",
     "less": "^2.6.0",
     "less-loader": "^2.2.2",

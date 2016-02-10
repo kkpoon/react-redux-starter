@@ -1,5 +1,3 @@
-/* @flow */
-
 'use strict';
 
 import colors from "material-colors";
@@ -10,10 +8,9 @@ import d3 from 'd3';
 
 import '../themes/default-md/components/greeting-card';
 
-
 class GreetingCard extends Component {
 
-  render(): ?ReactElement {
+  render() {
     const {
       title,
       greetingMessage,
@@ -60,7 +57,7 @@ class GreetingCard extends Component {
     );
   }
 
-  handleClearButtonClick(e: Event): void {
+  handleClearButtonClick(e) {
     const input = this.refs.gMsgInput;
     const field = this.refs.gMsgField;
     input.value = '';
@@ -68,7 +65,7 @@ class GreetingCard extends Component {
     this.props.onClearButtonClick();
   }
 
-  handleGreetMsgChange(e: Event): void {
+  handleGreetMsgChange(e) {
     const input = this.refs.gMsgInput;
     const msg = input.value.trim();
     this.props.onGreetingMessageChange(msg);

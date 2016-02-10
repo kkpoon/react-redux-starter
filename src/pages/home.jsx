@@ -1,7 +1,3 @@
-/*
- * @flow
- */
-
 'use strict';
 import colors from "material-colors";
 
@@ -20,7 +16,7 @@ import sayClear from '../actions/say/clear';
 import GreetingCard from '../components/greeting-card';
 
 class HomePage extends Component {
-  render(): ?ReactElement {
+  render() {
     const { dispatch, greetingMessage, helloMessage, sayMessage } = this.props;
     return (
       <div className="mdl-grid">

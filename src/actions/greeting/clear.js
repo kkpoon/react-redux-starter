@@ -1,9 +1,5 @@
-/* @flow */
-
 'use strict';
 
-import type { Action } from "../";
-
-export default function(): Action {
+export default function() {
   return { type: 'CLEAR_GREETING' };
 }

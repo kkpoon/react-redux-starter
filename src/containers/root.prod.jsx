@@ -11,9 +11,9 @@ import configureStore from '../stores/configureStore.prod';
 
 const {store, history} = configureStore();
 
-class Root extends Component<{}, {}, {}> {
+class Root extends Component {
 
-  render(): ?ReactElement {
+  render() {
     return (
       <Provider store={store}>
         <div>

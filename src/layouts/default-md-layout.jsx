@@ -1,7 +1,3 @@
-/*
- * @flow
- */
-
 'use strict';
 
 import 'material-design-lite/material';
@@ -28,7 +24,7 @@ WebFont.load({
 
 class DefaultLayout extends Component {
 
-  render(): ?ReactElement {
+  render() {
     return (
       <div className="mdl-layout mdl-js-layout">
         <header className="mdl-layout__header mdl-layout__header--scroll">
@@ -118,7 +114,7 @@ class DefaultLayout extends Component {
     );
   }
 
-  handleNavLinkClick(e: Event): void {
+  handleNavLinkClick(e) {
     const drawer = this.refs.drawer;
     d3.select(ReactDOM.findDOMNode(drawer)).classed("is-visible", false);
     d3.select('.mdl-layout__obfuscator').classed("is-visible", false);
