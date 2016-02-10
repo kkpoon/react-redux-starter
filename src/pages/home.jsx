@@ -3,6 +3,7 @@
  */
 
 'use strict';
+import colors from "material-colors";
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
@@ -34,6 +35,8 @@ class HomePage extends Component {
         <div className="mdl-cell mdl-cell--8-col">
           <GreetingCard
             title="Hello"
+            titleBackgroundColor={colors.pink[300]}
+            titleFontColor={colors.black}
             greetingMessage={helloMessage}
             onGreetingMessageChange={msg => dispatch(helloUpdate(msg))}
             onClearButtonClick={() => dispatch(helloClear())}
@@ -42,6 +45,8 @@ class HomePage extends Component {
         <div className="mdl-cell mdl-cell--8-col">
           <GreetingCard
             title="Say"
+            titleBackgroundColor={colors.amber[500]}
+            titleFontColor={colors.black}
             greetingMessage={sayMessage}
             onGreetingMessageChange={msg => dispatch(sayUpdate(msg))}
             onClearButtonClick={() => dispatch(sayClear())}

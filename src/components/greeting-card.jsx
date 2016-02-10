@@ -2,6 +2,8 @@
 
 'use strict';
 
+import colors from "material-colors";
+
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import d3 from 'd3';
@@ -12,10 +14,18 @@ import '../themes/default-md/components/greeting-card';
 class GreetingCard extends Component {
 
   render(): ?ReactElement {
-    const { title, greetingMessage } = this.props;
+    const {
+      title,
+      greetingMessage,
+      titleBackgroundColor,
+      titleFontColor
+    } = this.props;
     return (
       <div className="mdl-card mdl-shadow--2dp card">
-        <div className="mdl-card__title title">
+        <div className="mdl-card__title title" style={{
+          backgroundColor: titleBackgroundColor,
+          color: titleFontColor
+        }}>
           <h2 className="mdl-card__title-text">{title}</h2>
         </div>
         <div className="mdl-card__supporting-text">
@@ -67,9 +77,16 @@ class GreetingCard extends Component {
 
 GreetingCard.propTypes = {
   title: PropTypes.string.isRequired,
+  titleBackgroundColor: PropTypes.string,
+  titleFontColor: PropTypes.string,
   greetingMessage: PropTypes.string.isRequired,
   onGreetingMessageChange: PropTypes.func.isRequired,
   onClearButtonClick: PropTypes.func.isRequired
+};
+
+GreetingCard.defaultProps = {
+  titleBackgroundColor: colors.blue[500],
+  titleFontColor: colors.white
 };
 
 export default GreetingCard;
