@@ -4,9 +4,6 @@ import colors from "material-colors";
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import greetingUpdate from '../actions/greeting/update';
-import greetingClear from '../actions/greeting/clear';
-
 import helloUpdate from '../actions/hello/update';
 import helloClear from '../actions/hello/clear';
 
@@ -15,21 +12,17 @@ import sayClear from '../actions/say/clear';
 
 import increaseCounter from '../actions/counter/increment';
 
+import GreetingContainer from '../containers/greeting';
 import GreetingCard from '../components/greeting-card';
 import CounterCard from '../components/counter-card';
 
 class HomePage extends Component {
   render() {
-    const { dispatch, greetingMessage, helloMessage, sayMessage, counter } = this.props;
+    const { dispatch, helloMessage, sayMessage, counter } = this.props;
     return (
       <div className="mdl-grid">
         <div className="mdl-cell mdl-cell--8-col">
-          <GreetingCard
-            title="Greeting"
-            greetingMessage={greetingMessage}
-            onGreetingMessageChange={msg => dispatch(greetingUpdate(msg))}
-            onClearButtonClick={() => dispatch(greetingClear())}
-          />
+          <GreetingContainer title="Greeting" />
         </div>
         <div className="mdl-cell mdl-cell--8-col">
           <GreetingCard
@@ -63,19 +56,17 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  greetingMessage: PropTypes.string.isRequired,
   helloMessage: PropTypes.string.isRequired,
   sayMessage: PropTypes.string.isRequired,
   counter: PropTypes.number.isRequired
 };
 
-function select(state) {
+const mapStateToProps = (state) => {
   return {
-    greetingMessage: state.greeting,
     helloMessage: state.hello,
     sayMessage: state.say,
     counter: state.counter
   };
 }
 
-export default connect(select)(HomePage);
+export default connect(mapStateToProps)(HomePage);

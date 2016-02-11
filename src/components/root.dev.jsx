@@ -8,7 +8,7 @@ import { Router } from 'react-router';
 import routes from '../routes';
 
 import configureStore from '../stores/configureStore.dev';
-import DevTools from '../containers/dev-tools';
+import DevTools from './dev-tools';
 
 const {store, history} = configureStore();
 

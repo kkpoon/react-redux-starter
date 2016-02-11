@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import createHistory from 'history/lib/createHashHistory';
 
 import reducers from '../reducers';
-import DevTools from '../containers/dev-tools';
+import DevTools from '../components/dev-tools';
 
 const finalCreateStore = compose(
   applyMiddleware(thunk),
