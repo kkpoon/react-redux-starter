@@ -99,12 +99,12 @@ class DefaultLayout extends Component {
             {this.props.children}
           </div>
         </main>
-        <footer className="mdl-mini-footer">
-          <div className="mdl-mini-footer__left-section">
+        <footer className="mdl-mega-footer">
+          <div className="mdl-mega-footer__bottom-section">
             <div className="mdl-logo">
               React Redux Boilerplate
             </div>
-            <ul className="mdl-mini-footer__link-list">
+            <ul className="mdl-mega-footer__link-list">
               <li><a href="#">Help</a></li>
               <li><a href="#">Privacy &amp; Terms</a></li>
             </ul>
