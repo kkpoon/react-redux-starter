@@ -13,12 +13,13 @@ import sayClear from '../actions/say/clear';
 import increaseCounter from '../actions/counter/increment';
 
 import GreetingContainer from '../containers/greeting';
+import SayContainer from '../containers/say';
 import GreetingCard from '../components/greeting-card';
 import CounterCard from '../components/counter-card';
 
 class HomePage extends Component {
   render() {
-    const { dispatch, helloMessage, sayMessage, counter } = this.props;
+    const { dispatch, helloMessage, counter } = this.props;
     return (
       <div className="mdl-grid">
         <div className="mdl-cell mdl-cell--8-col">
@@ -35,13 +36,10 @@ class HomePage extends Component {
           />
         </div>
         <div className="mdl-cell mdl-cell--8-col">
-          <GreetingCard
+          <SayContainer
             title="Say"
             titleBackgroundColor={colors.amber[500]}
             titleFontColor={colors.black}
-            greetingMessage={sayMessage}
-            onGreetingMessageChange={msg => dispatch(sayUpdate(msg))}
-            onClearButtonClick={() => dispatch(sayClear())}
           />
         </div>
         <div className="mdl-cell mdl-cell--4-col">
@@ -57,14 +55,12 @@ class HomePage extends Component {
 
 HomePage.propTypes = {
   helloMessage: PropTypes.string.isRequired,
-  sayMessage: PropTypes.string.isRequired,
   counter: PropTypes.number.isRequired
 };
 
 const mapStateToProps = (state) => {
   return {
     helloMessage: state.hello,
-    sayMessage: state.say,
     counter: state.counter
   };
 }
