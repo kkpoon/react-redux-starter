@@ -30,3 +30,5 @@ lib/*
 !.gitkeep
 
 coverage
+
+typings

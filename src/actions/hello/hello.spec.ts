@@ -1,5 +1,4 @@
-/// <reference path="../../../typings/main/ambient/mocha/mocha.d.ts" />
-/// <reference path="../../../typings/main/ambient/chai/chai.d.ts" />
+/// <reference path="../../../typings/main.d.ts" />
 
 import { expect } from "chai";
 
