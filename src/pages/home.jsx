@@ -1,38 +1,26 @@
 'use strict';
 import colors from "material-colors";
 
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-
-import helloUpdate from '../actions/hello/update';
-import helloClear from '../actions/hello/clear';
-
-import sayUpdate from '../actions/say/update';
-import sayClear from '../actions/say/clear';
-
-import increaseCounter from '../actions/counter/increment';
+import React, { Component } from 'react';
 
 import GreetingContainer from '../containers/greeting';
 import SayContainer from '../containers/say';
+import HelloContainer from '../containers/hello';
+import CounterContainer from '../containers/counter';
 import GreetingCard from '../components/greeting-card';
-import CounterCard from '../components/counter-card';
 
 class HomePage extends Component {
   render() {
-    const { dispatch, helloMessage, counter } = this.props;
     return (
       <div className="mdl-grid">
         <div className="mdl-cell mdl-cell--8-col">
           <GreetingContainer title="Greeting" />
         </div>
         <div className="mdl-cell mdl-cell--8-col">
-          <GreetingCard
+          <HelloContainer
             title="Hello"
             titleBackgroundColor={colors.pink[300]}
             titleFontColor={colors.black}
-            greetingMessage={helloMessage}
-            onGreetingMessageChange={msg => dispatch(helloUpdate(msg))}
-            onClearButtonClick={() => dispatch(helloClear())}
           />
         </div>
         <div className="mdl-cell mdl-cell--8-col">
@@ -43,26 +31,11 @@ class HomePage extends Component {
           />
         </div>
         <div className="mdl-cell mdl-cell--4-col">
-          <CounterCard
-            counter={counter}
-            onIncreaseButtonClick={() => dispatch(increaseCounter())}
-          />
+          <CounterContainer />
         </div>
       </div>
     );
   }
 }
 
-HomePage.propTypes = {
-  helloMessage: PropTypes.string.isRequired,
-  counter: PropTypes.number.isRequired
-};
-
-const mapStateToProps = (state) => {
-  return {
-    helloMessage: state.hello,
-    counter: state.counter
-  };
-}
-
-export default connect(mapStateToProps)(HomePage);
+export default HomePage;
