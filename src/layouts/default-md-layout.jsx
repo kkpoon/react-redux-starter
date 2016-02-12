@@ -98,18 +98,18 @@ class DefaultLayout extends Component {
           <div className="page-content" style={{paddingTop: 30}}>
             {this.props.children}
           </div>
-        </main>
-        <footer className="mdl-mega-footer">
-          <div className="mdl-mega-footer__bottom-section">
-            <div className="mdl-logo">
-              React Redux Boilerplate
+          <footer className="mdl-mega-footer">
+            <div className="mdl-mega-footer__bottom-section">
+              <div className="mdl-logo">
+                React Redux Boilerplate
+              </div>
+              <ul className="mdl-mega-footer__link-list">
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy &amp; Terms</a></li>
+              </ul>
             </div>
-            <ul className="mdl-mega-footer__link-list">
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Privacy &amp; Terms</a></li>
-            </ul>
-          </div>
-        </footer>
+          </footer>
+        </main>
       </div>
     );
   }
