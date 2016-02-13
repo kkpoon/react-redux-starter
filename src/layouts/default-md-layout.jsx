@@ -9,7 +9,6 @@ import WebFont from 'webfontloader';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
-import d3 from 'd3';
 
 WebFont.load({
   google: {
@@ -116,8 +115,12 @@ class DefaultLayout extends Component {
 
   handleNavLinkClick(e) {
     const drawer = this.refs.drawer;
-    d3.select(ReactDOM.findDOMNode(drawer)).classed("is-visible", false);
-    d3.select('.mdl-layout__obfuscator').classed("is-visible", false);
+    const className = ReactDOM.findDOMNode(drawer).className;
+    ReactDOM.findDOMNode(drawer).className = className.replace("is-visible", "");
+    var obf = document.getElementsByClassName("mdl-layout__obfuscator");
+    for (var i = 0; i < obf.length; i++) {
+      obf[i].className = obf[i].className.replace("is-visible", "");
+    }
   }
 
 }

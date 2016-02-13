@@ -59,7 +59,6 @@
     "webpack": "^1.12.9"
   },
   "dependencies": {
-    "d3": "^3.5.12",
     "history": "^1.17.0",
     "material-colors": "^1.0.0",
     "material-design-lite": "^1.0.6",

@@ -4,7 +4,6 @@ import colors from "material-colors";
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import d3 from 'd3';
 
 import '../themes/default-md/components/greeting-card';
 
@@ -61,7 +60,8 @@ class GreetingCard extends Component {
     const input = this.refs.gMsgInput;
     const field = this.refs.gMsgField;
     input.value = '';
-    d3.select(ReactDOM.findDOMNode(field)).classed('is-dirty', false);
+    const className = ReactDOM.findDOMNode(field).className;
+    ReactDOM.findDOMNode(field).className = className.replace("is-dirty", "");
     this.props.onClearButtonClick();
   }
 
