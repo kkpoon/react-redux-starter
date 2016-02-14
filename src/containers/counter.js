@@ -12,7 +12,8 @@ import CounterCard from '../components/counter-card';
 
 const mapStateToProps = (state) => {
   return {
-    counter: state.counter
+    counter: state.counter.get("counter"),
+    increasing: state.counter.get("increasing")
   };
 };
 

@@ -4,6 +4,8 @@ import colors from "material-colors";
 
 import React, { Component, PropTypes } from 'react';
 
+import classNames from "classnames";
+
 import '../themes/default-md/components/counter-card';
 
 class CounterCard extends Component {
@@ -11,32 +13,39 @@ class CounterCard extends Component {
   render() {
     const {
       counter,
+      increasing,
       titleBackgroundColor,
       titleFontColor
     } = this.props;
     return (
-      <div className="mdl-card mdl-shadow--2dp card">
-        <div className="mdl-card__title title" style={{
-          backgroundColor: titleBackgroundColor,
-          color: titleFontColor
-        }}>
-          <h2 className="mdl-card__title-text">Counter</h2>
-        </div>
-        <div className="mdl-card__supporting-text">
-          {counter}
+      <div className="counter-card mdl-card mdl-shadow--2dp" style={{
+        backgroundColor: titleBackgroundColor,
+        color: titleFontColor
+      }}>
+        <div className="mdl-card__title mdl-card--expand">
+          <h4>
+            Delayed Counter <i>for 2000ms</i><br/>
+            {counter}
+          </h4>
         </div>
         <div className="mdl-card__actions mdl-card--border">
-          <button className="mdl-button mdl-button--colored mdl-js-button
-                             mdl-js-ripple-effect"
+          <button className="mdl-button mdl-js-button mdl-button--raised
+                             mdl-js-ripple-effect mdl-button--colored
+                             plus-one-button"
                   onClick={e => this.handleIncreaseButtonClick(e)}>
-            +1 (delayed)
+            +1
           </button>
-        </div>
-        <div className="mdl-card__menu menu">
-          <button className="mdl-button mdl-button--icon mdl-js-button
-                             mdl-js-ripple-effect">
-            <i className="material-icons">share</i>
-          </button>
+          <div className="mdl-layout-spacer"></div>
+          <div className={
+            classNames(
+              "mdl-spinner",
+              "mdl-spinner--single-color",
+              "mdl-js-spinner", {
+                "is-active": increasing,
+                "is-upgraded": increasing
+              }
+            )
+          }></div>
         </div>
       </div>
     );
@@ -49,13 +58,14 @@ class CounterCard extends Component {
 
 CounterCard.propTypes = {
   counter: PropTypes.number.isRequired,
+  increasing: PropTypes.bool,
   titleBackgroundColor: PropTypes.string,
   titleFontColor: PropTypes.string,
   onIncreaseButtonClick: PropTypes.func.isRequired
 };
 
 CounterCard.defaultProps = {
-  titleBackgroundColor: colors.blue[500],
+  titleBackgroundColor: colors.lightGreen[300],
   titleFontColor: colors.white
 };
 
