@@ -7,6 +7,7 @@ import GreetingContainer from '../containers/greeting';
 import SayContainer from '../containers/say';
 import HelloContainer from '../containers/hello';
 import CounterContainer from '../containers/counter';
+import FalcorHelloContainer from '../containers/falcorhello';
 import GreetingCard from '../components/greeting-card';
 
 class HomePage extends Component {
@@ -28,6 +29,10 @@ class HomePage extends Component {
               titleBackgroundColor={colors.pink[300]}
               titleFontColor={colors.black}
             />
+          </div>
+          <div className="mdl-cell mdl-cell--4">
+            <FalcorHelloContainer
+              titleBackgroundColor={colors.cyan[200]}/>
           </div>
         </div>
         <div className="mdl-grid">

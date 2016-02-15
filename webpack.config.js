@@ -15,7 +15,7 @@ module.exports = {
     extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx", ".less"]
   },
   output: {
-    path: path.resolve(__dirname, 'lib'),
+    path: path.resolve(__dirname, 'public/lib'),
     filename: "bundle.js"
   },
   module: {
