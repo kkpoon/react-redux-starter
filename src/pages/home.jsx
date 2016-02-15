@@ -8,6 +8,7 @@ import SayContainer from '../containers/say';
 import HelloContainer from '../containers/hello';
 import CounterContainer from '../containers/counter';
 import FalcorHelloContainer from '../containers/falcorhello';
+import GithubContainer from "../containers/github";
 import GreetingCard from '../components/greeting-card';
 
 class HomePage extends Component {
@@ -15,33 +16,24 @@ class HomePage extends Component {
     return (
       <div>
         <div className="mdl-grid">
-          <div className="mdl-cell mdl-cell--8-col">
+          <div className="mdl-cell mdl-cell--7-col">
             <GreetingContainer title="Greeting" />
-          </div>
-          <div className="mdl-cell mdl-cell--4-col">
-            <CounterContainer />
-          </div>
-        </div>
-        <div className="mdl-grid">
-          <div className="mdl-cell mdl-cell--8-col">
             <HelloContainer
               title="Hello"
               titleBackgroundColor={colors.pink[300]}
               titleFontColor={colors.black}
             />
-          </div>
-          <div className="mdl-cell mdl-cell--4">
-            <FalcorHelloContainer
-              titleBackgroundColor={colors.cyan[200]}/>
-          </div>
-        </div>
-        <div className="mdl-grid">
-          <div className="mdl-cell mdl-cell--8-col">
             <SayContainer
               title="Say"
               titleBackgroundColor={colors.amber[500]}
               titleFontColor={colors.black}
             />
+          </div>
+          <div className="mdl-cell mdl-cell--5-col">
+            <CounterContainer />
+            <FalcorHelloContainer
+              titleBackgroundColor={colors.cyan[200]}/>
+            <GithubContainer />
           </div>
         </div>
       </div>
