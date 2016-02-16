@@ -3,10 +3,10 @@
     "target": "es5",
     "sourceMap": true
   },
+  "compileOnSave": false,
   "exclude": [
     "typings/browser.d.ts",
     "typings/browser",
     "node_modules"
   ]
 }
-
