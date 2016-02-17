@@ -8,10 +8,10 @@
   },
   "scripts": {
     "build:web": "webpack --progress --colors",
-    "build:server": "tsc --module commonjs --sourceMap --rootDir src --outDir lib src/servers/*.ts",
+    "build:server": "babel --source-maps --source-root src --out-dir lib src/servers/*.js",
     "dist:web": "NODE_ENV=production webpack -p --progress --colors",
     "watch:web": "webpack --progress --colors --watch",
-    "watch:server": "tsc -w --module commonjs --sourceMap --rootDir src --outDir lib src/servers/*.ts",
+    "watch:server": "babel -w --source-maps --source-root src --out-dir lib src/servers/*.js",
     "server": "node bin/simple-server",
     "start": "concurrent \"npm run watch:web\" \"npm run watch:server\" \"npm run server\" ",
     "test": "BABEL_JEST_STAGE=0 jest",
