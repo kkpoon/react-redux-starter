@@ -15,7 +15,10 @@
     "server": "node bin/simple-server",
     "start": "concurrent \"npm run watch:web\" \"npm run watch:server\" \"npm run server\" ",
     "test": "BABEL_JEST_STAGE=0 jest",
-    "mocha": "mocha --compilers js:babel-register,jsx:babel-register,coffee:coffee-script/register,ts:espower-typescript/guess,tsx:espower-typescript/guess src/**/*.spec.*"
+    "mocha": "mocha --compilers js:babel-register,jsx:babel-register,coffee:coffee-script/register,ts:espower-typescript/guess,tsx:espower-typescript/guess src/**/*.spec.*",
+    "release:major": "npm version major && git push origin --follow-tags",
+    "release:minor": "npm version minor && git push origin --follow-tags",
+    "release:patch": "npm version patch && git push origin --follow-tags"
   },
   "repository": {
     "type": "git",
