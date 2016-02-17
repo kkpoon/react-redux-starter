@@ -30,7 +30,7 @@
     "boilerplate"
   ],
   "author": "K.K. POON <noopkk@gmail.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/kkpoon/react-redux-boilerplate/issues"
   },
