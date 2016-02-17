@@ -12,8 +12,8 @@
     "dist:web": "NODE_ENV=production webpack -p --progress --colors",
     "watch:web": "webpack --progress --colors --watch",
     "watch:server": "tsc -w --module commonjs --sourceMap --rootDir src --outDir lib src/servers/*.ts",
-    "server": "node index.js",
-    "start": "concurrent \"npm run watch\" \"npm run server\" ",
+    "server": "node bin/simple-server",
+    "start": "concurrent \"npm run watch:web\" \"npm run watch:server\" \"npm run server\" ",
     "test": "BABEL_JEST_STAGE=0 jest",
     "mocha": "mocha --compilers js:babel-register,jsx:babel-register,coffee:coffee-script/register,ts:espower-typescript/guess,tsx:espower-typescript/guess src/**/*.spec.*"
   },
@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/kkpoon/react-redux-boilerplate#readme",
   "devDependencies": {
+    "babel-cli": "^6.5.1",
     "babel-core": "^6.3.26",
     "babel-jest": "^6.0.1",
     "babel-loader": "^6.2.0",
@@ -75,6 +76,7 @@
     "immutable": "^3.7.6",
     "material-colors": "^1.0.0",
     "material-design-lite": "^1.0.6",
+    "morgan": "^1.6.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.6",

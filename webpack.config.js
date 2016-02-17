@@ -10,7 +10,7 @@ var plugins = [
 ];
 
 module.exports = {
-  entry: "./src/index.jsx",
+  entry: "./src/web/index.jsx",
   resolve: {
     extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx", ".less"]
   },
