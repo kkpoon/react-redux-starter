@@ -15,3 +15,5 @@ app.use('/model.json', falcorExpress.dataSourceRoute(function (req, res) {
 app.use('/graphql', graphqlHTTP({ schema: helloSchemas, graphiql: true }));
 
 app.use(express.static("public"));
+
+module.exports = app;

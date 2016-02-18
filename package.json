@@ -12,10 +12,10 @@
     "dist:web": "NODE_ENV=production webpack -p --progress --colors",
     "watch:web": "webpack --progress --colors --watch",
     "watch:server": "babel -w --copy-files --source-maps --source-root src --out-dir lib/servers --ignore *.spec.* src/servers",
-    "server": "node bin/simple-server",
+    "server": "node bin/app",
     "start": "concurrent \"npm run watch:web\" \"npm run watch:server\" \"npm run server\" ",
-    "test": "BABEL_JEST_STAGE=0 jest",
-    "mocha": "mocha --compilers js:babel-register,jsx:babel-register,coffee:coffee-script/register,ts:espower-typescript/guess,tsx:espower-typescript/guess src/**/*.spec.*",
+    "jest": "BABEL_JEST_STAGE=0 jest",
+    "test": "mocha src/**/*.spec.*",
     "release:major": "npm version major && git push origin --follow-tags",
     "release:minor": "npm version minor && git push origin --follow-tags",
     "release:patch": "npm version patch && git push origin --follow-tags"
