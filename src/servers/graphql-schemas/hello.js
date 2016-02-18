@@ -1,7 +1,9 @@
-var graphql = require("graphql");
-var GraphQLSchema = graphql.GraphQLSchema;
-var GraphQLObjectType = graphql.GraphQLObjectType;
-var GraphQLString = graphql.GraphQLString;
+import {
+  graphql,
+  GraphQLSchema,
+  GraphQLObjectType,
+  GraphQLString
+} from 'graphql';
 
 module.exports = new GraphQLSchema({
   query: new GraphQLObjectType({

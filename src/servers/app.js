@@ -1,4 +1,4 @@
-import express from "express";
+var express = require("express");
 var falcorExpress = require('falcor-express');
 var graphqlHTTP = require('express-graphql');
 
