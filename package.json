@@ -1,19 +1,17 @@
 {
   "name": "react-redux-boilerplate",
   "version": "1.0.0",
-  "description": "a boilerplate with react and redux, layout with material-design-lite, compile with babel and build with webpack",
+  "description": "a boilerplate with react, redux and mdl, build with webpack",
   "private": true,
   "engines": {
     "node": ">=4.0.0"
   },
   "scripts": {
-    "build:web": "webpack --progress --colors",
-    "build:server": "babel --copy-files --source-maps --source-root src --out-dir lib/servers --ignore *.spec.* src/servers",
-    "dist:web": "NODE_ENV=production webpack -p --progress --colors",
-    "watch:web": "webpack --progress --colors --watch",
-    "watch:server": "babel -w --copy-files --source-maps --source-root src --out-dir lib/servers --ignore *.spec.* src/servers",
+    "build": "webpack --progress --colors",
+    "dist": "NODE_ENV=production webpack -p --progress --colors",
+    "watch": "webpack --progress --colors --watch",
     "server": "node bin/app",
-    "start": "concurrent \"npm run watch:web\" \"npm run watch:server\" \"npm run server\" ",
+    "start": "concurrent \"npm run watch\" \"npm run server\" ",
     "jest": "BABEL_JEST_STAGE=0 jest",
     "test": "mocha src/**/*.spec.*",
     "release:major": "npm version major && git push origin --follow-tags",
@@ -36,7 +34,6 @@
   },
   "homepage": "https://github.com/kkpoon/react-redux-boilerplate#readme",
   "devDependencies": {
-    "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
     "babel-jest": "^6.0.1",
     "babel-loader": "^6.2.2",
@@ -64,7 +61,8 @@
     "ts-loader": "^0.8.1",
     "typescript": "^1.7.5",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.13"
+    "webpack": "^1.12.13",
+    "webpack-node-externals": "^0.4.1"
   },
   "dependencies": {
     "classnames": "^2.2.3",
