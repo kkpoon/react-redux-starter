@@ -1,11 +1,8 @@
 'use strict';
 
 import colors from "material-colors";
-
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-
-import '../themes/default-md/components/greeting-card';
 
 class GreetingCard extends Component {
 
@@ -13,14 +10,23 @@ class GreetingCard extends Component {
     const {
       title,
       greetingMessage,
+      width,
+      height,
+      titleHeight,
       titleBackgroundColor,
-      titleFontColor
+      titleFontColor,
+      menuIcon,
+      menuIconColor
     } = this.props;
     return (
-      <div className="mdl-card mdl-shadow--2dp card">
-        <div className="mdl-card__title title" style={{
+      <div className="mdl-card mdl-shadow--2dp" style={{
+        width: width,
+        height: height
+      }}>
+        <div className="mdl-card__title" style={{
           backgroundColor: titleBackgroundColor,
-          color: titleFontColor
+          color: titleFontColor,
+          height: titleHeight
         }}>
           <h2 className="mdl-card__title-text">{title}</h2>
         </div>
@@ -46,10 +52,12 @@ class GreetingCard extends Component {
             Clear
           </button>
         </div>
-        <div className="mdl-card__menu menu">
+        <div className="mdl-card__menu" style={{
+          color: menuIconColor
+        }}>
           <button className="mdl-button mdl-button--icon mdl-js-button
                              mdl-js-ripple-effect">
-            <i className="material-icons">share</i>
+            <i className="material-icons">{menuIcon}</i>
           </button>
         </div>
       </div>
@@ -74,16 +82,26 @@ class GreetingCard extends Component {
 
 GreetingCard.propTypes = {
   title: PropTypes.string.isRequired,
-  titleBackgroundColor: PropTypes.string,
-  titleFontColor: PropTypes.string,
   greetingMessage: PropTypes.string.isRequired,
   onGreetingMessageChange: PropTypes.func.isRequired,
-  onClearButtonClick: PropTypes.func.isRequired
+  onClearButtonClick: PropTypes.func.isRequired,
+  width: PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
+  height: PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
+  titleHeight: React.PropTypes.number,
+  titleBackgroundColor: PropTypes.string,
+  titleFontColor: PropTypes.string,
+  menuIcon: PropTypes.string,
+  menuIconColor: PropTypes.string
 };
 
 GreetingCard.defaultProps = {
+  width: "auto",
+  height: "auto",
+  titleHeight: 150,
   titleBackgroundColor: colors.blue[500],
-  titleFontColor: colors.white
+  titleFontColor: colors.white,
+  menuIcon: "more_vert",
+  menuIconColor: colors.white
 };
 
 export default GreetingCard;
