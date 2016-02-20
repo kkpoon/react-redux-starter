@@ -15,7 +15,7 @@ module.exports = [
     name: "web",
     entry: "./src/web/index.jsx",
     resolve: {
-      extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx", ".less"]
+      extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx"]
     },
     output: {
       path: path.resolve(__dirname, 'public/lib'),

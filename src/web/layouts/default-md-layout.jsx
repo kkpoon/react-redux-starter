@@ -1,9 +1,8 @@
 'use strict';
 
 import 'material-design-lite/material';
-
-import '../themes/default-md/base';
-import '../themes/default-md/layout';
+import 'material-design-lite/material.css';
+import '../themes/default-md-layout.css';
 
 import WebFont from 'webfontloader';
 import React, {Component} from 'react';

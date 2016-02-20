@@ -1,12 +1,8 @@
 'use strict';
 
 import colors from "material-colors";
-
 import React, { Component, PropTypes } from 'react';
-
 import classNames from "classnames";
-
-import '../themes/default-md/components/counter-card';
 
 class CounterCard extends Component {
 
@@ -18,20 +14,30 @@ class CounterCard extends Component {
       titleFontColor
     } = this.props;
     return (
-      <div className="counter-card mdl-card mdl-shadow--2dp" style={{
+      <div className="mdl-card mdl-shadow--2dp" style={{
+        width: "100%",
         backgroundColor: titleBackgroundColor,
         color: titleFontColor
       }}>
-        <div className="mdl-card__title mdl-card--expand">
-          <h4>
-            Delayed Counter <i>for 2000ms</i><br/>
+        <div className="mdl-card__title mdl-card--expand" style={{
+          alignItems: "flex-start"
+        }}>
+          <h4 style={{marginTop: 0}}>
+            Delayed Counter <i style={{fontSize: "0.5em"}}>for 2000ms</i><br/>
             {counter}
           </h4>
         </div>
-        <div className="mdl-card__actions mdl-card--border">
+        <div className="mdl-card__actions mdl-card--border" style={{
+            display: "flex",
+            boxSizing: "border-box",
+            alignItems: "center"
+        }}>
           <button className="mdl-button mdl-js-button mdl-button--raised
-                             mdl-js-ripple-effect mdl-button--colored
-                             plus-one-button"
+                             mdl-js-ripple-effect mdl-button--colored"
+                  style={{
+                    color: colors.white,
+                    fontStyle: "italic"
+                  }}
                   onClick={e => this.handleIncreaseButtonClick(e)}>
             +1
           </button>

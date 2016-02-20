@@ -6,8 +6,6 @@ import React, { Component, PropTypes } from 'react';
 
 import classNames from "classnames";
 
-import '../themes/default-md/components/text-card';
-
 class TextCard extends Component {
 
   render() {
@@ -18,16 +16,24 @@ class TextCard extends Component {
       titleFontColor
     } = this.props;
     return (
-      <div className="counter-card mdl-card mdl-shadow--2dp" style={{
+      <div className="mdl-card mdl-shadow--2dp" style={{
         backgroundColor: titleBackgroundColor,
-        color: titleFontColor
+        color: titleFontColor,
+        width: "100%"
       }}>
-        <div className="mdl-card__title mdl-card--expand">
-          <h4>{text}</h4>
+        <div className="mdl-card__title mdl-card--expand" style={{
+          alignItems: "flex-start"
+        }}>
+          <h4 style={{marginTop: 0}}>{text}</h4>
         </div>
-        <div className="mdl-card__actions mdl-card--border">
+        <div className="mdl-card__actions mdl-card--border" style={{
+          display: "flex",
+          boxSizing: "border-box",
+          alignItems: "center"
+        }}>
           <button className="mdl-button mdl-js-button mdl-button--raised
                              mdl-js-ripple-effect mdl-button--colored"
+                  style={{color: colors.white}}
                   onClick={e => this.handleReloadButtonClick(e)}>
             Reload
           </button>
