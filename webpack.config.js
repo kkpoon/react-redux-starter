@@ -53,7 +53,7 @@ module.exports = [
     plugins: plugins
   },
   {
-    name: "bin",
+    name: "servers",
     target: "node",
     externals: [nodeExternals()],
     entry: {

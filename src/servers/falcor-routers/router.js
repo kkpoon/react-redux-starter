@@ -4,7 +4,7 @@ var Rx = require("rx");
 var Observable = Rx.Observable;
 var ObservableRequest = Observable.fromNodeCallback(request);
 
-var Routers = Router.createClass([
+module.exports = Router.createClass([
   {
     // match a request for the key "greeting"
     route: "greeting",
@@ -57,5 +57,3 @@ var Routers = Router.createClass([
     }
   }
 ]);
-
-module.exports = Routers;
