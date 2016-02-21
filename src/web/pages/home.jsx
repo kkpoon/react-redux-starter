@@ -10,6 +10,7 @@ import CounterContainer from '../containers/counter';
 import FalcorHelloContainer from '../containers/falcorhello';
 import GithubContainer from "../containers/github";
 import GreetingCard from '../components/greeting-card';
+import StandardCard from "../components/mdl/card/standard-card";
 
 class HomePage extends Component {
   render() {
@@ -17,6 +18,7 @@ class HomePage extends Component {
       <div>
         <div className="mdl-grid">
           <div className="mdl-cell mdl-cell--7-col">
+            <StandardCard />
             <GreetingContainer title="Greeting" />
             <HelloContainer
               title="Hello"
