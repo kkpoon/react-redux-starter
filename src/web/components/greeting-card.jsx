@@ -3,16 +3,26 @@
 import colors from "material-colors";
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import { intlShape, injectIntl, defineMessages } from 'react-intl';
 
 import StandardCard from "./mdl/card/standard-card";
 import Button from "./mdl/button";
 
+const messages = defineMessages({
+  greeting: {
+      id: 'greeting',
+      defaultMessage: 'Greeting',
+  }
+});
+
 class GreetingCard extends StandardCard {
 
   renderBody() {
+    const {formatMessage} = this.props.intl;
     const { greetingMessage } = this.props;
     return (
       <div>
+        {formatMessage(messages.greeting)}
         {greetingMessage}
         <form action="#">
           <div className="mdl-textfield mdl-js-textfield" ref="gMsgField">
@@ -56,6 +66,7 @@ class GreetingCard extends StandardCard {
 }
 
 GreetingCard.propTypes = Object.assign({}, StandardCard.propTypes, {
+  intl: intlShape.isRequired,
   greetingMessage: PropTypes.string.isRequired,
   onGreetingMessageChange: PropTypes.func.isRequired,
   onClearButtonClick: PropTypes.func.isRequired
@@ -65,4 +76,4 @@ GreetingCard.defaultProps = Object.assign({}, StandardCard.defaultProps, {
   title: "Greeting"
 });
 
-export default GreetingCard;
+export default injectIntl(GreetingCard);

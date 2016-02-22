@@ -5,7 +5,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = [
   {
-    devtool: 'cheap-module-eval-source-map',
     name: "web",
     entry: {
       bundle: "./src/web/index.jsx"
@@ -16,7 +15,7 @@ module.exports = [
     output: {
       path: path.resolve(__dirname, 'public/lib'),
       publicPath: "lib/",
-      filename: "[name].js"
+      filename: "[name].min.js"
     },
     module: {
       loaders: [
@@ -50,7 +49,7 @@ module.exports = [
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {
-          'NODE_ENV': JSON.stringify("development")
+          'NODE_ENV': JSON.stringify("production")
         }
       }),
       new HtmlWebpackPlugin({
@@ -62,7 +61,6 @@ module.exports = [
     ]
   },
   {
-    devtool: 'cheap-module-eval-source-map',
     name: "servers",
     target: "node",
     externals: [nodeExternals()],
@@ -89,7 +87,7 @@ module.exports = [
     plugins: [
       new webpack.DefinePlugin({
         'process.env': {
-          'NODE_ENV': JSON.stringify("development")
+          'NODE_ENV': JSON.stringify("production")
         }
       })
     ]

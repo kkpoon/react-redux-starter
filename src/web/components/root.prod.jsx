@@ -8,6 +8,7 @@ import { Router } from 'react-router';
 import routes from '../routes';
 
 import configureStore from '../stores/configureStore.prod';
+import IntlProvider from "../containers/connected-intl-provider";
 
 const {store, history} = configureStore();
 
@@ -17,9 +18,11 @@ class Root extends Component {
     return (
       <Provider store={store}>
         <div>
-          <Router history={history}>
-            {routes}
-          </Router>
+          <IntlProvider>
+            <Router history={history}>
+              {routes}
+            </Router>
+          </IntlProvider>
         </div>
       </Provider>
     );
