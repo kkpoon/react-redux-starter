@@ -6,6 +6,6 @@ import say from './say';
 import counter from './counter';
 import falcorHello from "./falcorhello";
 import github from "./github";
-import i18n from "./i18n";
+import language from "./language";
 
-export default { i18n, greeting, hello, say, counter, falcorHello, github };
+export default { language, greeting, hello, say, counter, falcorHello, github };

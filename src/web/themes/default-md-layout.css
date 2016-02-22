@@ -12,3 +12,8 @@ html {
 .mdl-card {
   margin-bottom: 1em;
 }
+
+.mdl-radio {
+  display: table-cell;
+  padding: 0 20px;
+}

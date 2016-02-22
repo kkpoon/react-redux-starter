@@ -10,9 +10,9 @@ const DefaultLanguage = {
   key: "en"
 };
 
-function i18n(state = Immutable.Map(DefaultLanguage), action) {
+function language(state = Immutable.Map(DefaultLanguage), action) {
   switch (action.type) {
-    case "CHANGE_LOCALE":
+    case "CHANGE_LANGUAGE":
       const locale = action.locale;
       return state
         .set("locale", locale)
@@ -23,4 +23,4 @@ function i18n(state = Immutable.Map(DefaultLanguage), action) {
   }
 }
 
-export default i18n;
+export default language;

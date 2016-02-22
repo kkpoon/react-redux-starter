@@ -8,6 +8,19 @@ import WebFont from 'webfontloader';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
+import {
+  Layout,
+  Header,
+  HeaderRow,
+  Textfield,
+  Drawer,
+  Navigation,
+  Spacer,
+  Content,
+  Footer,
+  FooterSection,
+  FooterLinkList
+} from "react-mdl";
 
 WebFont.load({
   google: {
@@ -24,29 +37,18 @@ class DefaultLayout extends Component {
 
   render() {
     return (
-      <div className="mdl-layout mdl-js-layout">
-        <header className="mdl-layout__header mdl-layout__header--scroll">
-          <div className="mdl-layout__header-row">
-            <span className="mdl-layout-title">React Redux Boilerplate</span>
-            <div className="mdl-layout-spacer"></div>
-            <div className="mdl-textfield mdl-js-textfield
-                            mdl-textfield--expandable
-                            mdl-textfield--floating-label
-                            mdl-textfield--align-right">
-              <label className="mdl-button mdl-js-button mdl-button--icon"
-                     htmlFor="globalSearch">
-                <i className="material-icons">search</i>
-              </label>
-              <div className="mdl-textfield__expandable-holder">
-                <input className="mdl-textfield__input"
-                       type="text" name="search" id="globalSearch" />
-              </div>
-            </div>
-          </div>
-        </header>
-        <div className="mdl-layout__drawer" ref="drawer">
-          <span className="mdl-layout-title">K.K. POON</span>
-          <nav className="mdl-navigation">
+      <Layout>
+        <Header title="React Redux Boilerplate" scroll>
+          <HeaderRow title="React Redux Boilerplate">
+            <Textfield value=""
+                       onChange={(e) => {}}
+                       label="Search"
+                       expandable
+                       expandableIcon="search"/>
+          </HeaderRow>
+        </Header>
+        <Drawer title="K.K. POON">
+          <Navigation>
             <Link
               className="mdl-navigation__link mdl-navigation__link--icon"
               to="/home"
@@ -71,9 +73,9 @@ class DefaultLayout extends Component {
               <i className="material-icons">donut_small</i>
               <span>Feature 2</span>
             </Link>
-          </nav>
-          <div className="mdl-layout-spacer"></div>
-          <nav className="mdl-navigation">
+          </Navigation>
+          <Spacer />
+          <Navigation>
             <Link
               className="mdl-navigation__link mdl-navigation__link--icon"
               to="/settings"
@@ -90,36 +92,33 @@ class DefaultLayout extends Component {
               <i className="material-icons">exit_to_app</i>
               <span>Sign out</span>
             </Link>
-          </nav>
-        </div>
-        <main className="mdl-layout__content">
+          </Navigation>
+        </Drawer>
+        <Content>
           <div className="page-content" style={{paddingTop: 30}}>
             {this.props.children}
           </div>
-          <footer className="mdl-mega-footer">
-            <div className="mdl-mega-footer__bottom-section">
-              <div className="mdl-logo">
-                React Redux Boilerplate
-              </div>
-              <ul className="mdl-mega-footer__link-list">
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Privacy &amp; Terms</a></li>
-              </ul>
-            </div>
-          </footer>
-        </main>
-      </div>
+          <Footer size="mega">
+            <FooterSection type="bottom" logo="React Redux Boilerplate">
+              <FooterLinkList>
+                <a href="#">Help</a>
+                <a href="#">Privacy &amp; Terms</a>
+              </FooterLinkList>
+            </FooterSection>
+          </Footer>
+        </Content>
+      </Layout>
     );
   }
 
   handleNavLinkClick(e) {
-    const drawer = this.refs.drawer;
-    const className = ReactDOM.findDOMNode(drawer).className;
-    ReactDOM.findDOMNode(drawer).className = className.replace("is-visible", "");
-    var obf = document.getElementsByClassName("mdl-layout__obfuscator");
-    for (var i = 0; i < obf.length; i++) {
-      obf[i].className = obf[i].className.replace("is-visible", "");
-    }
+    // const drawer = this.refs.drawer;
+    // const className = ReactDOM.findDOMNode(drawer).className;
+    // ReactDOM.findDOMNode(drawer).className = className.replace("is-visible", "");
+    // var obf = document.getElementsByClassName("mdl-layout__obfuscator");
+    // for (var i = 0; i < obf.length; i++) {
+    //   obf[i].className = obf[i].className.replace("is-visible", "");
+    // }
   }
 
 }

@@ -1,53 +1,46 @@
 'use strict';
 
+import colors from "material-colors";
 import React, {Component} from 'react';
-
-const Styles = {
-  WelcomeCard: {
-    width: "100%"
-  },
-  WelcomeCardTitle: {
-    color: "white",
-    height: 176,
-    backgroundColor: "#46B6AC"
-  },
-  WelcomeCardMenu: {
-    color: "white"
-  }
-}
+import {
+  Card,
+  CardTitle,
+  CardText,
+  CardActions,
+  CardMenu,
+  Grid,
+  Cell,
+  Button,
+  IconButton
+} from "react-mdl";
 
 class Feature1Page extends Component {
   render() {
     return (
-      <div className="mdl-grid">
-        <div className="mdl-cell mdl-cell--8-col">
-          <div className="mdl-card mdl-shadow--2dp" style={Styles.WelcomeCard}>
-            <div className="mdl-card__title" style={Styles.WelcomeCardTitle}>
-              <h2 className="mdl-card__title-text">Feature 1 Overview</h2>
-            </div>
-            <div className="mdl-card__supporting-text">
+      <Grid>
+        <Cell col={8}>
+          <Card shadow={2} style={{width: "100%"}}>
+            <CardTitle
+              style={{
+                height: 150,
+                color: colors.white,
+                background: colors.cyan[500]
+              }}>
+              Feature 1 Overview
+            </CardTitle>
+            <CardText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Mauris sagittis pellentesque lacus eleifend lacinia...
-            </div>
-            <div className="mdl-card__actions mdl-card--border">
-              <a className="mdl-button
-                            mdl-button--colored
-                            mdl-js-button
-                            mdl-js-ripple-effect">
-                Get Started
-              </a>
-            </div>
-            <div className="mdl-card__menu" style={Styles.WelcomeCardMenu}>
-              <button className="mdl-button
-                                 mdl-button--icon
-                                 mdl-js-button
-                                 mdl-js-ripple-effect">
-                <i className="material-icons">share</i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+            </CardText>
+            <CardActions border>
+              <Button primary ripple>Get Started</Button>
+            </CardActions>
+            <CardMenu style={{color: '#fff'}}>
+              <IconButton name="share" />
+            </CardMenu>
+          </Card>
+        </Cell>
+      </Grid>
     );
   }
 }
