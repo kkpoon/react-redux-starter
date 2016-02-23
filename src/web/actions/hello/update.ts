@@ -1,9 +1,14 @@
 import { Action } from "../";
 
-export interface HelloUpdateAction extends Action {
+export class HelloUpdateAction implements Action {
+  type: string = "UPDATE_HELLO";
   message: string;
+
+  constructor(message: string) {
+    this.message = message;
+  }
 }
 
-export default function update(message: string): Action {
-  return <HelloUpdateAction>{ type: "UPDATE_HELLO", message };
+export default function(message: string): HelloUpdateAction {
+  return new HelloUpdateAction(message);
 }
