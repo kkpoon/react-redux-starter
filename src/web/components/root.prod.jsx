@@ -1,16 +1,27 @@
 'use strict';
 
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import { Router, browserHistory } from 'react-router';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+import thunk from 'redux-thunk';
 
 import routes from '../routes';
-
-import configureStore from '../stores/configureStore.prod';
+import reducers from "../reducers";
 import IntlProvider from "../containers/connected-intl-provider";
 
-const {store, history} = configureStore();
+const store = createStore(
+  combineReducers({
+    ...reducers,
+    routing: routerReducer
+  }),
+  compose(
+    applyMiddleware(thunk)
+  )
+);
+
+const history = syncHistoryWithStore(browserHistory, store);
 
 class Root extends Component {
 

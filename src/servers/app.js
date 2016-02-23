@@ -1,3 +1,4 @@
+import path from "path";
 import express from "express";
 import morgan from "morgan";
 var falcorExpress = require('falcor-express');
@@ -17,5 +18,9 @@ app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => {
 app.use('/graphql', graphqlHTTP({ schema: helloSchemas, graphiql: true }));
 
 app.use(express.static("public"));
+
+app.get('*', (req, res, next) => {
+  res.sendFile(path.resolve('public', 'index.html'))
+});
 
 module.exports = app;
