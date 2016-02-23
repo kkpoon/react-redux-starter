@@ -1,4 +1,5 @@
 import express from "express";
+import morgan from "morgan";
 var falcorExpress = require('falcor-express');
 var graphqlHTTP = require('express-graphql');
 
@@ -6,6 +7,8 @@ var FalcorRouter = require("./falcor-routers/router");
 var helloSchemas = require("./graphql-schemas/hello");
 
 const app = express();
+
+app.use(morgan('tiny'))
 
 app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => {
   return new FalcorRouter();
