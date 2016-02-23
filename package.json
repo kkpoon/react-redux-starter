@@ -13,7 +13,7 @@
     "server": "node bin/app",
     "start": "concurrent \"npm run watch\" \"npm run server\" ",
     "test": "mocha src/**/*.spec.*",
-    "test:browser": "karma start test/karma.conf.js",
+    "test:browser": "karma start karma.conf.js",
     "release:major": "npm version major && git push origin --follow-tags",
     "release:minor": "npm version minor && git push origin --follow-tags",
     "release:patch": "npm version patch && git push origin --follow-tags"
