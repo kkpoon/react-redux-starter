@@ -6,7 +6,7 @@ import {
   userSelector,
   fetchingSelector,
   starSelector,
-  profileSelector
+  githubContainerSelector
 } from "./github";
 
 describe('github selectors', () => {
@@ -46,9 +46,9 @@ describe('github selectors', () => {
     });
   });
 
-  describe("profile selector", () => {
-    it('should return a github user profile', () => {
-      expect(profileSelector(state)).to.deep.equal({
+  describe("container selector", () => {
+    it('should return a github user profile for github container', () => {
+      expect(githubContainerSelector(state)).to.deep.equal({
         name: user.name,
         created_at: user.created_at,
         repositories: user.repos,

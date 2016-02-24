@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 import fetchGithubUser from '../actions/github/fetch';
 import GithubCard from '../components/github-card';
-import { profileSelector } from "../selectors/github";
+import { githubContainerSelector } from "../selectors/github";
 
 
 const mapDispatchToProps = (dispatch) => {
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(profileSelector, mapDispatchToProps)(GithubCard);
+export default connect(githubContainerSelector, mapDispatchToProps)(GithubCard);
