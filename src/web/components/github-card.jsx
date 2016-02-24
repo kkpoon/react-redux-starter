@@ -3,6 +3,7 @@
 import colors from "material-colors";
 
 import React, { Component, PropTypes } from 'react';
+import { Card, CardTitle, CardText, CardActions, Spacer } from "react-mdl";
 
 import classNames from "classnames";
 
@@ -15,6 +16,7 @@ class GithubCard extends Component {
       name,
       created_at,
       repositories,
+      totalStars,
       loading,
       titleBackgroundColor,
       titleFontColor
@@ -50,20 +52,24 @@ class GithubCard extends Component {
       </table>
     ) : (<h6>No data</h6>);
     return (
-      <div className="counter-card mdl-card mdl-shadow--2dp">
-        <div className="mdl-card__title mdl-card--expand" style={{
-          backgroundColor: titleBackgroundColor,
-          color: titleFontColor
+      <Card shadow={2} style={{width: "100%"}}>
+        <CardTitle style={{
+          height: 150,
+          color: colors.white,
+          background: colors.purple[200]
         }}>
-          <h4>Github - 10 most recent pushed repositories</h4>
-        </div>
-        <div className="mdl-card__supporting-text">
+          Github - 10 most recent pushed repositories
+        </CardTitle>
+        <CardText>
           <h4>{name}</h4>
           <h6>on github since {created_at}</h6>
+          <h7>{totalStars} stars</h7>
           {dataTable}
-        </div>
-        <div className="mdl-card__actions mdl-card--border" style={{
-          color: colors.black
+        </CardText>
+        <CardActions border style={{
+          display: "flex",
+          boxSizing: "border-box",
+          alignItems: "center"
         }}>
           <form action="#">
             <div className="mdl-textfield mdl-js-textfield
@@ -81,7 +87,7 @@ class GithubCard extends Component {
                   onClick={e => this.handleLoadButtonClick(e)}>
             Load
           </button>
-          <div className="mdl-layout-spacer"></div>
+          <Spacer />
           <div className={
             classNames(
               "mdl-spinner",
@@ -92,8 +98,8 @@ class GithubCard extends Component {
               }
             )
           }></div>
-        </div>
-      </div>
+        </CardActions>
+      </Card>
     );
   }
 
@@ -108,6 +114,7 @@ GithubCard.propTypes = {
   name: PropTypes.string.isRequired,
   created_at: PropTypes.string.isRequired,
   repositories: PropTypes.array.isRequired,
+  totalStars: PropTypes.number,
   loading: PropTypes.bool,
   titleBackgroundColor: PropTypes.string,
   titleFontColor: PropTypes.string,
@@ -117,7 +124,8 @@ GithubCard.propTypes = {
 GithubCard.defaultProps = {
   titleBackgroundColor: colors.lightGreen[300],
   titleFontColor: colors.white,
-  loading: false
+  loading: false,
+  totalStars: 0
 };
 
 export default GithubCard;

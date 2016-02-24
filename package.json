@@ -80,6 +80,7 @@
     "graphql": "^0.4.17",
     "immutable": "^3.7.6",
     "intl": "^1.1.0",
+    "lodash.isequal": "^4.1.0",
     "material-colors": "^1.0.0",
     "material-design-lite": "^1.1.1",
     "morgan": "^1.6.1",
@@ -93,6 +94,7 @@
     "redux": "^3.3.1",
     "redux-thunk": "^1.0.3",
     "request": "^2.69.0",
+    "reselect": "^2.0.3",
     "rx": "^4.0.7",
     "webfontloader": "^1.6.16"
   }
