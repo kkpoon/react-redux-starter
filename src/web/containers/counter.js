@@ -11,10 +11,7 @@ import increaseCounter from '../actions/counter/increment';
 import CounterCard from '../components/counter-card';
 
 const mapStateToProps = (state) => {
-  return {
-    counter: state.counter.get("counter"),
-    increasing: state.counter.get("increasing")
-  };
+  return {... state};
 };
 
 const mapDispatchToProps = (dispatch) => {
