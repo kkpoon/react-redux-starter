@@ -7,6 +7,7 @@ import '../themes/default-md-layout.css';
 import WebFont from 'webfontloader';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import { intlShape, injectIntl, defineMessages } from 'react-intl';
 import { Link } from 'react-router';
 import {
   Layout,
@@ -33,13 +34,21 @@ WebFont.load({
   timeout: 5000
 });
 
+const messages = defineMessages({
+  siteName: {
+      id: 'site.name',
+      defaultMessage: 'React Redux Boilerplate',
+  }
+});
+
 class DefaultLayout extends Component {
 
   render() {
+    const { formatMessage } = this.props.intl;
     return (
       <Layout>
-        <Header title="React Redux Boilerplate" scroll>
-          <HeaderRow title="React Redux Boilerplate">
+        <Header scroll>
+          <HeaderRow title={formatMessage(messages.siteName)}>
             <Textfield value=""
                        onChange={(e) => {}}
                        label="Search"
@@ -99,7 +108,7 @@ class DefaultLayout extends Component {
             {this.props.children}
           </div>
           <Footer size="mega">
-            <FooterSection type="bottom" logo="React Redux Boilerplate">
+            <FooterSection type="bottom" logo={formatMessage(messages.siteName)}>
               <FooterLinkList>
                 <a href="#">Help</a>
                 <a href="#">Privacy &amp; Terms</a>
@@ -123,4 +132,8 @@ class DefaultLayout extends Component {
 
 }
 
-export default DefaultLayout;
+DefaultLayout.propTypes = {
+  intl: intlShape.isRequired
+}
+
+export default injectIntl(DefaultLayout);
