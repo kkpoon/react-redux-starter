@@ -14,6 +14,8 @@
     "start": "concurrent \"npm run watch\" \"npm run server\" ",
     "test": "mocha src/**/*.spec.*",
     "test:browser": "karma start karma.conf.js",
+    "flow": "flow check",
+    "flow:start": "flow start",
     "release:major": "npm version major && git push origin --follow-tags",
     "release:minor": "npm version minor && git push origin --follow-tags",
     "release:patch": "npm version patch && git push origin --follow-tags"
