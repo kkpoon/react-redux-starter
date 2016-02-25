@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { addLocaleData } from "react-intl";
 
-import Root from './components/root';
+import Root from './root';
 
 import en from "react-intl/lib/locale-data/en";
 import zh from "react-intl/lib/locale-data/zh";
