@@ -43,9 +43,7 @@ class Root extends Component {
       <Provider store={store}>
         <div>
           <IntlProvider>
-            <Router history={history}>
-              {routes}
-            </Router>
+            <Router history={history} routes={routes}/>
           </IntlProvider>
           {extensions}
         </div>
