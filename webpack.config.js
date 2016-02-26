@@ -34,12 +34,12 @@ module.exports = [
           loader: "coffee-loader"
         },
         {
-          test: /\.less$/,
-          loader: "style!css!less"
-        },
-        {
           test: /\.css$/,
           loader: "style!css"
+        },
+        {
+          test: /\.json$/,
+          loader: "json-loader"
         },
         {
           test: /\.(png|woff|woff2|eot|ttf|svg)(\?.*)?$/,

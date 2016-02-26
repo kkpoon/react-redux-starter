@@ -1,4 +1,7 @@
 {
   "presets": ["stage-0", "es2015", "react"],
-  "plugins": ["transform-strict-mode"]
+  "plugins": [
+    "transform-strict-mode",
+    ["react-intl", { "messagesDir": "./build/messages/" }]
+  ]
 }

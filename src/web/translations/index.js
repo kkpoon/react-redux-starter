@@ -1,7 +1,4 @@
-import tw from "./zh-Hans";
-import cn from "./zh-Hans-CN";
-
 export default {
-  "zh-Hans": tw,
-  "zh-Hans-CN": cn
+  "zh-Hans": require("./zh-Hans.json"),
+  "zh-Hans-CN": require("./zh-Hans-CN.json")
 };
