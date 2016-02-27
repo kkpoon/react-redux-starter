@@ -15,7 +15,7 @@ const storeEnhancers = [];
 const extensions = [];
 
 if (__DEVTOOLS__) {
-  const DevTools = require('./containers/dev-tools').default;
+  const DevTools = require('./components/dev-tools').default;
   storeEnhancers.push(DevTools.instrument())
   extensions.push(<DevTools key="devtools" />);
 }
