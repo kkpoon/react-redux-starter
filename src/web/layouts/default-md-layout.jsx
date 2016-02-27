@@ -60,7 +60,7 @@ class DefaultLayout extends Component {
           <Navigation>
             <Link
               className="mdl-navigation__link mdl-navigation__link--icon"
-              to="/home"
+              to="/"
               onClick={e => this.handleNavLinkClick(e)}
               >
               <i className="material-icons">home</i>

@@ -1,18 +1,16 @@
 import Layout from '../layouts/default-md-layout';
-import Home from './home';
 import Feature1 from './feature1';
 import Feature2 from './feature2';
 
 const rootRoute = {
+  component: "div",
   childRoutes: [
-    {
-      path: "/",
+    { // Default Layout Pages
       component: Layout,
-      indexRoute: { component: Home },
       childRoutes: [
-        { path: "/home", component: Home },
+        require("./home"),
         { path: "/feature1", component: Feature1 },
-        { path: "/feature2", component: feature2 }
+        { path: "/feature2", component: Feature2 }
       ]
     }
   ]
