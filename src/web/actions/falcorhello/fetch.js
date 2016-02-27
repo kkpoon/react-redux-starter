@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
 import falcor from "falcor";
 import HttpDataSource from "falcor-http-datasource";
 
 const model = new falcor.Model({
-  source: new HttpDataSource('/model.json')
+  source: new HttpDataSource("/model.json")
 });
 
 function fetched(message) {
@@ -22,5 +22,5 @@ export default function() {
       .then(response => {
         dispatch(fetched(response.json.greeting));
       });
-  }
+  };
 }

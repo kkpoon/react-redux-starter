@@ -4,11 +4,11 @@
  *
  */
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import fetchFalcorHello from '../actions/falcorhello/fetch';
+import fetchFalcorHello from "../actions/falcorhello/fetch";
 
-import TextCard from '../components/text-card';
+import TextCard from "../components/text-card";
 
 const mapStateToProps = (state) => {
   return {

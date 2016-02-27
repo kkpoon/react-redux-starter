@@ -1,4 +1,4 @@
-var Router = require('falcor-router');
+var Router = require("falcor-router");
 var request = require("request");
 var Rx = require("rx");
 var Observable = Rx.Observable;
@@ -9,7 +9,7 @@ module.exports = Router.createClass([
     // match a request for the key "greeting"
     route: "greeting",
     // respond with a PathValue with the value of "Hello World."
-    get: function(pathSet) {
+    get: function() {
       return { path: ["greeting"], value: "Hello World" };
     }
   },

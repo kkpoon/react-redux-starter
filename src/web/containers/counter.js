@@ -4,11 +4,11 @@
  *
  */
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import increaseCounter from '../actions/counter/increment';
+import increaseCounter from "../actions/counter/increment";
 
-import CounterCard from '../components/counter-card';
+import CounterCard from "../components/counter-card";
 
 const mapStateToProps = (state) => {
   return {...state.counter};

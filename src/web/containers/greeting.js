@@ -4,12 +4,12 @@
  *
  */
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import greetingUpdate from '../actions/greeting/update';
-import greetingClear from '../actions/greeting/clear';
+import greetingUpdate from "../actions/greeting/update";
+import greetingClear from "../actions/greeting/clear";
 
-import GreetingCard from '../components/greeting-card';
+import GreetingCard from "../components/greeting-card";
 
 const mapStateToProps = (state) => {
   return {

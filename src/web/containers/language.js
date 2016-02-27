@@ -4,10 +4,10 @@
  *
  */
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import languageChange from '../actions/language/change';
-import LanguageCard from '../components/language-card';
+import languageChange from "../actions/language/change";
+import LanguageCard from "../components/language-card";
 
 const mapStateToProps = (state) => {
   return {

@@ -8,12 +8,12 @@ export type GreetingAction = UpdateAction | ClearAction;
 
 function greeting(state: State = "", action: GreetingAction): State {
   switch (action.type) {
-    case "UPDATE_GREETING":
-      return action.message;
-    case "CLEAR_GREETING":
-      return "";
-    default:
-      return state;
+  case "UPDATE_GREETING":
+    return action.message;
+  case "CLEAR_GREETING":
+    return "";
+  default:
+    return state;
   }
 }
 

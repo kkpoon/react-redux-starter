@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 import colors from "material-colors";
-import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component, PropTypes } from "react";
+import ReactDOM from "react-dom";
 import {
   Button,
   Card,
@@ -11,12 +11,12 @@ import {
   CardActions,
   Textfield
 } from "react-mdl";
-import { intlShape, injectIntl, defineMessages } from 'react-intl';
+import { intlShape, injectIntl, defineMessages } from "react-intl";
 
 const messages = defineMessages({
   greeting: {
-      id: 'greeting',
-      defaultMessage: 'Greeting',
+    id: "greeting",
+    defaultMessage: "Greeting",
   }
 });
 

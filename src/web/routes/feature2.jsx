@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 import colors from "material-colors";
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import {
   Card,
   CardTitle,
@@ -35,7 +35,7 @@ class Feature2Page extends Component {
             <CardActions border>
               <Button primary ripple>Get Started</Button>
             </CardActions>
-            <CardMenu style={{color: '#fff'}}>
+            <CardMenu style={{color: "#fff"}}>
               <IconButton name="share" />
             </CardMenu>
           </Card>

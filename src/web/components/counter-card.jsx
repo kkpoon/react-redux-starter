@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 import Color from "color";
 import colors from "material-colors";
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from "react";
 import {
   Card,
   CardTitle,

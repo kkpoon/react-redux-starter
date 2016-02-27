@@ -17,5 +17,5 @@ export default function(): Thunk {
   return (dispatch) => {
     dispatch(increasing());
     setTimeout(() => dispatch(increase()), 2000);
-  }
+  };
 }

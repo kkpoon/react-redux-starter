@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 import colors from "material-colors";
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from "react";
 
 import { Card, CardTitle, CardText, RadioGroup, Radio } from "react-mdl";
 

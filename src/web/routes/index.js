@@ -1,6 +1,6 @@
-import Layout from '../layouts/default-md-layout';
-import Feature1 from './feature1';
-import Feature2 from './feature2';
+import Layout from "../layouts/default-md-layout";
+import Feature1 from "./feature1";
+import Feature2 from "./feature2";
 
 const rootRoute = {
   component: "div",

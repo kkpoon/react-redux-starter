@@ -1,7 +1,5 @@
-'use strict';
-
 import colors from "material-colors";
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from "react";
 import { Card, CardTitle, CardActions, Button, Spacer, Spinner } from "react-mdl";
 
 class TextCard extends Component {

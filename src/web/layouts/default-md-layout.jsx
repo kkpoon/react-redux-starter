@@ -1,14 +1,14 @@
-'use strict';
+"use strict";
 
-import 'material-design-lite/material';
-import 'material-design-lite/material.css';
-import '../themes/default-md-layout.css';
+import "material-design-lite/material";
+import "material-design-lite/material.css";
+import "../themes/default-md-layout.css";
 
-import WebFont from 'webfontloader';
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import { intlShape, injectIntl, defineMessages } from 'react-intl';
-import { Link } from 'react-router';
+import WebFont from "webfontloader";
+import React, {Component} from "react";
+import ReactDOM from "react-dom";
+import { intlShape, injectIntl, defineMessages } from "react-intl";
+import { Link } from "react-router";
 import {
   Layout,
   Header,
@@ -36,8 +36,8 @@ WebFont.load({
 
 const messages = defineMessages({
   siteName: {
-      id: 'site.name',
-      defaultMessage: 'React Redux Boilerplate',
+    id: "site.name",
+    defaultMessage: "React Redux Boilerplate",
   }
 });
 
@@ -134,6 +134,6 @@ class DefaultLayout extends Component {
 
 DefaultLayout.propTypes = {
   intl: intlShape.isRequired
-}
+};
 
 export default injectIntl(DefaultLayout);

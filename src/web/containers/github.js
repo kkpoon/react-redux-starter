@@ -4,10 +4,10 @@
  *
  */
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import fetchGithubUser from '../actions/github/fetch';
-import GithubCard from '../components/github-card';
+import fetchGithubUser from "../actions/github/fetch";
+import GithubCard from "../components/github-card";
 import { githubContainerSelector } from "../selectors/github";
 
 

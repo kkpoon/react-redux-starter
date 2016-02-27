@@ -6,12 +6,12 @@
  *
  */
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import helloUpdate from '../actions/hello/update';
-import helloClear from '../actions/hello/clear';
+import helloUpdate from "../actions/hello/update";
+import helloClear from "../actions/hello/clear";
 
-import GreetingCard from '../components/greeting-card';
+import GreetingCard from "../components/greeting-card";
 
 const mapStateToProps = (state) => {
   return {
