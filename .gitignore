@@ -33,5 +33,6 @@ public/index.html
 !.gitkeep
 
 coverage
+.nyc_output
 
 typings
