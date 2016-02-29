@@ -1,7 +1,7 @@
 "use strict";
 
-import "material-design-lite/material";
-import "material-design-lite/material.css";
+import "react-mdl/extra/material";
+import "react-mdl/extra/material.css";
 import "../themes/default-md-layout.css";
 
 import WebFont from "webfontloader";
