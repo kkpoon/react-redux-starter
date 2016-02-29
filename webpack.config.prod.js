@@ -1,7 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var nodeExternals = require('webpack-node-externals');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require("path");
+var webpack = require("webpack");
+var nodeExternals = require("webpack-node-externals");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = [
   {
@@ -13,7 +13,7 @@ module.exports = [
       extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx"]
     },
     output: {
-      path: path.resolve(__dirname, 'public/lib'),
+      path: path.resolve(__dirname, "public/lib"),
       publicPath: "lib/",
       filename: "[name].min.js"
     },
@@ -26,7 +26,7 @@ module.exports = [
         },
         {
           test: /\.tsx?$/,
-          loader: 'ts-loader'
+          loader: "ts-loader"
         },
         {
           test: /\.coffee$/,
@@ -42,22 +42,22 @@ module.exports = [
         },
         {
           test: /\.(png|woff|woff2|eot|ttf|svg)(\?.*)?$/,
-          loader: 'url-loader?limit=100000'
+          loader: "url-loader?limit=100000"
         }
       ]
     },
     plugins: [
       new webpack.DefinePlugin({
-        'process.env': {
-          'NODE_ENV': JSON.stringify("production")
+        "process.env": {
+          "NODE_ENV": JSON.stringify("production")
         },
-        '__DEVTOOLS__': false
+        "__DEVTOOLS__": false
       }),
       new HtmlWebpackPlugin({
         inject: "body",
         hash: true,
-        filename: '../index.html',
-        template: 'src/html/index.template.html'
+        filename: "../index.html",
+        template: "src/html/index.template.html"
       })
     ]
   },
@@ -72,9 +72,9 @@ module.exports = [
       extensions: ["", ".js"]
     },
     output: {
-      path: path.resolve(__dirname, 'lib/servers'),
+      path: path.resolve(__dirname, "lib/servers"),
       filename: "[name].js",
-      libraryTarget: "commonjs2",
+      libraryTarget: "commonjs2"
     },
     module: {
       loaders: [
@@ -87,8 +87,8 @@ module.exports = [
     },
     plugins: [
       new webpack.DefinePlugin({
-        'process.env': {
-          'NODE_ENV': JSON.stringify("production")
+        "process.env": {
+          "NODE_ENV": JSON.stringify("production")
         }
       })
     ]
