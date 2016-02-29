@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Grid, Cell } from "react-mdl";
 import Helmet from "react-helmet";
 
+import Layout from "../../../layouts/default-md-layout";
 import GreetingContainer from '../../../containers/greeting';
 import SayContainer from '../../../containers/say';
 import HelloContainer from '../../../containers/hello';
@@ -15,7 +16,7 @@ import LanguageContainer from "../../../containers/language";
 class HomePage extends Component {
   render() {
     return (
-      <div>
+      <Layout>
         <Helmet title="Home" />
         <Grid>
           <Cell col={7}>
@@ -30,7 +31,7 @@ class HomePage extends Component {
             <GithubContainer />
           </Cell>
         </Grid>
-      </div>
+      </Layout>
     );
   }
 }
