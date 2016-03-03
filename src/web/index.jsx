@@ -1,13 +1,27 @@
-'use strict';
+import "react-mdl/extra/material";
+import "react-mdl/extra/material.css";
+import "./themes/default-md-layout.css";
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { addLocaleData } from "react-intl";
+import WebFont from "webfontloader";
 
 import Root from './root';
 
 import en from "react-intl/lib/locale-data/en";
 import zh from "react-intl/lib/locale-data/zh";
+
+WebFont.load({
+  google: {
+    families: [
+      "Roboto:300,400,500,700:latin",
+      "Roboto+Condensed:400,300,700:latin",
+      "Material+Icons"
+    ]
+  },
+  timeout: 5000
+});
 
 addLocaleData(en);
 addLocaleData(zh);

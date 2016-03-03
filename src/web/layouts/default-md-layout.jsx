@@ -1,10 +1,3 @@
-"use strict";
-
-import "react-mdl/extra/material";
-import "react-mdl/extra/material.css";
-import "../themes/default-md-layout.css";
-
-import WebFont from "webfontloader";
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import { intlShape, injectIntl, defineMessages } from "react-intl";
@@ -22,17 +15,6 @@ import {
   FooterSection,
   FooterLinkList
 } from "react-mdl";
-
-WebFont.load({
-  google: {
-    families: [
-      "Roboto:300,400,500,700:latin",
-      "Roboto+Condensed:400,300,700:latin",
-      "Material+Icons"
-    ]
-  },
-  timeout: 5000
-});
 
 const messages = defineMessages({
   siteName: {
