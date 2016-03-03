@@ -1,6 +1,5 @@
-import React, {Component} from "react";
-import ReactDOM from "react-dom";
-import { intlShape, injectIntl, defineMessages } from "react-intl";
+import React, { Component } from "react";
+import { intlShape, injectIntl } from "react-intl";
 import { Link } from "react-router";
 import {
   Layout,
@@ -10,18 +9,11 @@ import {
   Drawer,
   Navigation,
   Spacer,
-  Content,
-  Footer,
-  FooterSection,
-  FooterLinkList
+  Content
 } from "react-mdl";
 
-const messages = defineMessages({
-  siteName: {
-    id: "site.name",
-    defaultMessage: "React Redux Boilerplate",
-  }
-});
+import Footer from "../components/footer";
+import Messages from "../messages";
 
 class DefaultLayout extends Component {
 
@@ -30,7 +22,7 @@ class DefaultLayout extends Component {
     return (
       <Layout>
         <Header scroll>
-          <HeaderRow title={formatMessage(messages.siteName)}>
+          <HeaderRow title={formatMessage(Messages.siteName)}>
             <Textfield value=""
                        onChange={(e) => {}}
                        label="Search"
@@ -86,14 +78,7 @@ class DefaultLayout extends Component {
             {this.props.children}
           </div>
           <Spacer />
-          <Footer size="mega">
-            <FooterSection type="bottom" logo={formatMessage(messages.siteName)}>
-              <FooterLinkList>
-                <a href="#">Help</a>
-                <a href="#">Privacy &amp; Terms</a>
-              </FooterLinkList>
-            </FooterSection>
-          </Footer>
+          <Footer />
         </Content>
       </Layout>
     );
