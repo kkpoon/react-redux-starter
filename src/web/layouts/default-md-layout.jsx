@@ -103,10 +103,12 @@ class DefaultLayout extends Component {
             </Link>
           </Navigation>
         </Drawer>
-        <Content>
-          <div className="page-content" style={{paddingTop: 30}}>
+        <Content component="main"
+                 style={{display: "flex", flexDirection: "column"}}>
+          <div className="page-content">
             {this.props.children}
           </div>
+          <Spacer />
           <Footer size="mega">
             <FooterSection type="bottom" logo={formatMessage(messages.siteName)}>
               <FooterLinkList>
