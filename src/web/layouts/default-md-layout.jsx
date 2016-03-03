@@ -61,7 +61,6 @@ class DefaultLayout extends Component {
             <Link
               className="mdl-navigation__link mdl-navigation__link--icon"
               to="/"
-              onClick={e => this.handleNavLinkClick(e)}
               >
               <i className="material-icons">home</i>
               <span>Home</span>
@@ -69,7 +68,6 @@ class DefaultLayout extends Component {
             <Link
               className="mdl-navigation__link mdl-navigation__link--icon"
               to="/feature1"
-              onClick={e => this.handleNavLinkClick(e)}
               >
               <i className="material-icons">dashboard</i>
               <span>Feature 1</span>
@@ -77,7 +75,6 @@ class DefaultLayout extends Component {
             <Link
               className="mdl-navigation__link mdl-navigation__link--icon"
               to="/feature2"
-              onClick={e => this.handleNavLinkClick(e)}
               >
               <i className="material-icons">donut_small</i>
               <span>Feature 2</span>
@@ -88,7 +85,6 @@ class DefaultLayout extends Component {
             <Link
               className="mdl-navigation__link mdl-navigation__link--icon"
               to="/settings"
-              onClick={e => this.handleNavLinkClick(e)}
               >
               <i className="material-icons">settings</i>
               <span>Settings</span>
@@ -96,7 +92,6 @@ class DefaultLayout extends Component {
             <Link
               className="mdl-navigation__link mdl-navigation__link--icon"
               to="/logout"
-              onClick={e => this.handleNavLinkClick(e)}
               >
               <i className="material-icons">exit_to_app</i>
               <span>Sign out</span>
@@ -120,16 +115,6 @@ class DefaultLayout extends Component {
         </Content>
       </Layout>
     );
-  }
-
-  handleNavLinkClick(e) {
-    // const drawer = this.refs.drawer;
-    // const className = ReactDOM.findDOMNode(drawer).className;
-    // ReactDOM.findDOMNode(drawer).className = className.replace("is-visible", "");
-    // var obf = document.getElementsByClassName("mdl-layout__obfuscator");
-    // for (var i = 0; i < obf.length; i++) {
-    //   obf[i].className = obf[i].className.replace("is-visible", "");
-    // }
   }
 
 }
