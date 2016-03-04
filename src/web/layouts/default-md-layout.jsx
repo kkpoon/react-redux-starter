@@ -72,8 +72,7 @@ class DefaultLayout extends Component {
             </Link>
           </Navigation>
         </Drawer>
-        <Content component="main"
-                 style={{display: "flex", flexDirection: "column"}}>
+        <Content component="main">
           <div className="page-content">
             {this.props.children}
           </div>
