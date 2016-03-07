@@ -8,7 +8,7 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
 import routes from './routes';
-import reducers from "./reducers";
+import * as reducers from "./reducers";
 import IntlProvider from "./containers/connected-intl-provider";
 
 const storeEnhancers = [];

@@ -1,11 +1,7 @@
-"use strict";
-
-import greeting from "./greeting";
-import hello from "./hello";
-import say from "./say";
-import counter from "./counter";
-import falcorHello from "./falcorhello";
-import github from "./github";
-import language from "./language";
-
-export default { language, greeting, hello, say, counter, falcorHello, github };
+export { default as greeting } from "./greeting";
+export { default as hello } from "./hello";
+export { default as say } from "./say";
+export { default as counter } from "./counter";
+export { default as falcorHello } from "./falcorHello";
+export { default as github } from "./github";
+export { default as language } from "./language";
