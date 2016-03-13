@@ -1,7 +1,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
-  GraphQLString
+  GraphQLString,
 } from "graphql";
 
 module.exports = new GraphQLSchema({
@@ -12,8 +12,8 @@ module.exports = new GraphQLSchema({
         type: GraphQLString,
         resolve() {
           return "world";
-        }
-      }
-    }
-  })
+        },
+      },
+    },
+  }),
 });

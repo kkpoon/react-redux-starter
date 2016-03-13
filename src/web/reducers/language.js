@@ -7,7 +7,7 @@ import trans from "../translations";
 const DefaultLanguage = {
   locale: "en",
   messages: {},
-  key: "en"
+  key: "en",
 };
 
 function language(state = Immutable.Map(DefaultLanguage), action) {

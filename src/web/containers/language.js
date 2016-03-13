@@ -11,7 +11,7 @@ import LanguageCard from "../components/language-card";
 
 const mapStateToProps = (state) => {
   return {
-    locale: state.language.get("locale")
+    locale: state.language.get("locale"),
   };
 };
 
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onLanguageSelect: (locale) => {
       dispatch(languageChange(locale));
-    }
+    },
   };
 };
 

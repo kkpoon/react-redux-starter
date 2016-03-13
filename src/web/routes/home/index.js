@@ -4,5 +4,5 @@ module.exports = {
     require.ensure([], (require) => {
       callback(null, require("./components/home"));
     });
-  }
+  },
 };

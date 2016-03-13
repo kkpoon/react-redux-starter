@@ -4,7 +4,7 @@ import falcor from "falcor";
 import HttpDataSource from "falcor-http-datasource";
 
 const model = new falcor.Model({
-  source: new HttpDataSource("/model.json")
+  source: new HttpDataSource("/model.json"),
 });
 
 function fetched(message) {

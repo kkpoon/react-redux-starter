@@ -2,7 +2,7 @@
 
 import type {
   IncreaseAction,
-  IncreasingAction
+  IncreasingAction,
 } from "../actions/counter/increment";
 
 type State = { counter: number, increasing: boolean };

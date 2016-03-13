@@ -13,7 +13,7 @@ import GreetingCard from "../components/greeting-card";
 
 const mapStateToProps = (state) => {
   return {
-    greetingMessage: state.greeting
+    greetingMessage: state.greeting,
   };
 };
 
@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     onClearButtonClick: () => {
       dispatch(greetingClear());
-    }
+    },
   };
 };
 

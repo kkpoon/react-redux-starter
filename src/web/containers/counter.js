@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onIncreaseButtonClick: () => {
       dispatch(increaseCounter());
-    }
+    },
   };
 };
 

@@ -6,8 +6,8 @@ const rootRoute = {
   childRoutes: [
     require("./home"),
     { path: "/feature1", component: Feature1 },
-    { path: "/feature2", component: Feature2 }
-  ]
+    { path: "/feature2", component: Feature2 },
+  ],
 };
 
 export default rootRoute;

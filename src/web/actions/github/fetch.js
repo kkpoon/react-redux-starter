@@ -4,7 +4,7 @@ import falcor from "falcor";
 import HttpDataSource from "falcor-http-datasource";
 
 const model = new falcor.Model({
-  source: new HttpDataSource("/model.json")
+  source: new HttpDataSource("/model.json"),
 });
 
 function fetched(user) {
@@ -24,14 +24,14 @@ export default function(username) {
       [
         "github",
         username,
-        ["name", "created_at"]
+        ["name", "created_at"],
       ],
       [
         "github",
         username,
         "repos",
         [{from:frm, length:len}],
-        ["name", "html_url", "stargazers_count", "forks_count", "watchers_count"]
+        ["name", "html_url", "stargazers_count", "forks_count", "watchers_count"],
       ]
     ).then(response => {
       const UserData = response.json.github[username];

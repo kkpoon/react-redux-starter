@@ -5,7 +5,7 @@ const mapStateToProps = (state) => {
   return {
     locale: state.language.get("locale"),
     messages: state.language.get("messages"),
-    key: state.language.get("locale")
+    key: state.language.get("locale"),
   };
 };
 

@@ -55,7 +55,7 @@ export const githubContainerSelector = createSelector(
       created_at: user.created_at || "",
       repositories: user.repos || [],
       totalStars: stars,
-      loading: fetching
+      loading: fetching,
     };
   }
 );

@@ -6,7 +6,7 @@ import {
   userSelector,
   fetchingSelector,
   starSelector,
-  githubContainerSelector
+  githubContainerSelector,
 } from "./github";
 
 describe("github selectors", () => {
@@ -15,15 +15,15 @@ describe("github selectors", () => {
     created_at: "2015-07-12T00:00:01Z",
     repos: [
       {
-        stargazers_count: 3
+        stargazers_count: 3,
       },
       {
-        stargazers_count: 0
+        stargazers_count: 0,
       },
       {
-        stargazers_count: 1
-      }
-    ]
+        stargazers_count: 1,
+      },
+    ],
   };
   const fetching = false;
   const state = { github: Immutable.Map({ user, fetching }) };
@@ -53,7 +53,7 @@ describe("github selectors", () => {
         created_at: user.created_at,
         repositories: user.repos,
         totalStars: 4,
-        loading: false
+        loading: false,
       });
     });
   });

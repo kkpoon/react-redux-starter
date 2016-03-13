@@ -13,13 +13,13 @@ import TextCard from "../components/text-card";
 const mapStateToProps = (state) => {
   return {
     text: state.falcorHello.get("message"),
-    loading: state.falcorHello.get("fetching")
+    loading: state.falcorHello.get("fetching"),
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onReloadButtonClick: () => dispatch(fetchFalcorHello())
+    onReloadButtonClick: () => dispatch(fetchFalcorHello()),
   };
 };
 

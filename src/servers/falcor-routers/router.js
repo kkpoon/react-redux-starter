@@ -11,7 +11,7 @@ module.exports = Router.createClass([
     // respond with a PathValue with the value of "Hello World."
     get: function() {
       return { path: ["greeting"], value: "Hello World" };
-    }
+    },
   },
   {
     route: "github.[{keys:userIds}].['name','created_at']",
@@ -21,9 +21,9 @@ module.exports = Router.createClass([
         return ObservableRequest({
           url: "https://api.github.com/users/" + uid,
           headers: {
-            "User-Agent": "kkpoon/react-redux-boilerplate"
-          }
-        }).flatMap(function(info) {
+            "User-Agent": "kkpoon/react-redux-boilerplate",
+          },
+        },).flatMap(function(info) {
           var user = JSON.parse(info[1]);
           return Observable.fromArray(pathSet[2])
             .map(function(key) {
@@ -31,7 +31,7 @@ module.exports = Router.createClass([
             });
         });
       });
-    }
+    },
   },
   {
     route: "github.[{keys:userIds}].repos.[{integers:indices}].[{keys:repoProps}]",
@@ -41,19 +41,19 @@ module.exports = Router.createClass([
         return ObservableRequest({
           url: "https://api.github.com/users/" + uid + "/repos",
           qs: { sort: "pushed" },
-          headers: { "User-Agent": "kkpoon/react-redux-boilerplate" }
+          headers: { "User-Agent": "kkpoon/react-redux-boilerplate" },
         }).flatMap(function(info) {
           var repos = JSON.parse(info[1]);
           return Observable.fromArray(pathSet.indices).flatMap(function(i) {
             return Observable.fromArray(pathSet.repoProps).map((key) => {
               return {
                 path: ["github", uid, "repos", i, key],
-                value: repos[i][key]
+                value: repos[i][key],
               };
             });
           });
         });
       });
-    }
-  }
+    },
+  },
 ]);

@@ -13,7 +13,7 @@ import { githubContainerSelector } from "../selectors/github";
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onLoadButtonClick: (username) => dispatch(fetchGithubUser(username))
+    onLoadButtonClick: (username) => dispatch(fetchGithubUser(username)),
   };
 };
 

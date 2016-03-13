@@ -15,7 +15,7 @@ import GreetingCard from "../components/greeting-card";
 
 const mapStateToProps = (state) => {
   return {
-    greetingMessage: state.hello
+    greetingMessage: state.hello,
   };
 };
 
@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     onClearButtonClick: () => {
       dispatch(helloClear());
-    }
+    },
   };
 };
 
