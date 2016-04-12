@@ -9,8 +9,8 @@ import WebFont from "webfontloader";
 
 import Root from './root';
 
-import en from "react-intl/lib/locale-data/en";
-import zh from "react-intl/lib/locale-data/zh";
+import en from "react-intl/locale-data/en";
+import zh from "react-intl/locale-data/zh";
 
 WebFont.load({
   google: {

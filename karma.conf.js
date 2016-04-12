@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/web/**/*.spec.*'
+      'src/**/*.spec.*'
     ],
 
 
@@ -27,7 +27,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/web/**/*.spec.*': ['webpack']
+      'src/**/*.spec.*': ['webpack']
     },
 
 
@@ -70,7 +70,7 @@ module.exports = function(config) {
     webpack: {
       devtool: 'inline-source-map',
       resolve: {
-        extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx"]
+        extensions: ["", ".js", ".jsx"]
       },
       module: {
         loaders: [
@@ -78,14 +78,6 @@ module.exports = function(config) {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
             loader: "babel-loader"
-          },
-          {
-            test: /\.tsx?$/,
-            loader: 'ts-loader'
-          },
-          {
-            test: /\.coffee$/,
-            loader: "coffee-loader"
           },
           {
             test: /\.css$/,

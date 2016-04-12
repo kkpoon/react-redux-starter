@@ -1,1 +1,1 @@
---compilers js:babel-register,jsx:babel-register,coffee:coffee-script/register,ts:espower-typescript/guess,tsx:espower-typescript/guess
+--compilers js:babel-register,jsx:babel-register

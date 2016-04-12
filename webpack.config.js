@@ -1,98 +1,45 @@
 var path = require("path");
 var webpack = require("webpack");
-var nodeExternals = require("webpack-node-externals");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = [
-  {
-    devtool: "cheap-module-eval-source-map",
-    name: "web",
-    entry: {
-      bundle: "./src/web/index.jsx"
-    },
-    resolve: {
-      extensions: ["", ".ts", ".tsx", ".coffee", ".js", ".jsx"]
-    },
-    output: {
-      path: path.resolve(__dirname, "public/lib"),
-      publicPath: "lib/",
-      filename: "[name].js"
-    },
-    module: {
-      loaders: [
-        {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          loader: "babel-loader"
-        },
-        {
-          test: /\.tsx?$/,
-          loader: "ts-loader"
-        },
-        {
-          test: /\.coffee$/,
-          loader: "coffee-loader"
-        },
-        {
-          test: /\.css$/,
-          loader: "style!css"
-        },
-        {
-          test: /\.json$/,
-          loader: "json-loader"
-        },
-        {
-          test: /\.(png|woff|woff2|eot|ttf|svg)(\?.*)?$/,
-          loader: "url-loader?limit=100000"
-        }
-      ]
-    },
-    plugins: [
-      new webpack.DefinePlugin({
-        "process.env": {
-          "NODE_ENV": JSON.stringify("development")
-        },
-        "__DEVTOOLS__": true
-      }),
-      new HtmlWebpackPlugin({
-        inject: "body",
-        hash: true,
-        filename: "../index.html",
-        template: "src/html/index.template.html"
-      })
+module.exports = {
+  devtool: "cheap-module-eval-source-map",
+  name: "web",
+  entry: "./src/index.jsx",
+  resolve: {
+    extensions: ["", ".js", ".jsx"]
+  },
+  output: {
+    path: path.resolve(__dirname, "lib"),
+    publicPath: "lib/",
+    filename: "bundle.js"
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
+      {
+        test: /\.css$/,
+        loader: "style!css"
+      },
+      {
+        test: /\.json$/,
+        loader: "json-loader"
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)(\?.*)?$/,
+        loader: "url-loader?limit=100000"
+      }
     ]
   },
-  {
-    devtool: "cheap-module-eval-source-map",
-    name: "servers",
-    target: "node",
-    externals: [nodeExternals()],
-    entry: {
-      app: "./src/servers/app.js"
-    },
-    resolve: {
-      extensions: ["", ".js"]
-    },
-    output: {
-      path: path.resolve(__dirname, "lib/servers"),
-      filename: "[name].js",
-      libraryTarget: "commonjs2"
-    },
-    module: {
-      loaders: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: "babel-loader"
-        }
-      ]
-    },
-    plugins: [
-      new webpack.DefinePlugin({
-        "process.env": {
-          "NODE_ENV": JSON.stringify("development")
-        }
-      })
-    ]
-  }
-];
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env": {
+        "NODE_ENV": JSON.stringify("development")
+      },
+      "__DEVTOOLS__": true
+    })
+  ]
+};

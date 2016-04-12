@@ -17,6 +17,7 @@ parserOptions:
 plugins:
   - react
   - flowtype
+  - jsx-a11y
 rules:
   indent:
     - 2
