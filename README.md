@@ -4,17 +4,11 @@
 
 # react-redux-boilerplate
 
-a boilerplate with react, redux and mdl, build with webpack and babel. This boilerplate include examples of implementation in ES6, CoffeeScript and TypeScript (incomplete).
+a boilerplate with react and redux, build with webpack and babel.
 
 - Build
   - Webpack
   - Babel
-  - CoffeeScript
-  - Typescript
-
-- Styling
-  - Material Design Lite
-  - Material Colors
 
 - Testing
   - mocha
