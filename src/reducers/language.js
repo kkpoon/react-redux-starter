@@ -1,7 +1,6 @@
-"use strict";
-
 import Immutable from "immutable";
 
+import { CHANGE_LANGUAGE } from "../actions";
 import trans from "../translations";
 
 const DefaultLanguage = {
@@ -12,7 +11,7 @@ const DefaultLanguage = {
 
 function language(state = Immutable.Map(DefaultLanguage), action) {
   switch (action.type) {
-  case "CHANGE_LANGUAGE": {
+  case CHANGE_LANGUAGE: {
     const locale = action.locale;
     return state
           .set("locale", locale)

@@ -1,7 +1,7 @@
 /* @flow */
 
-export type UpdateAction = { type: "UPDATE_GREETING", message: string };
+import { UPDATE_GREETING } from "../";
 
-export default function(message: string): UpdateAction {
-  return { type: "UPDATE_GREETING", message };
-}
+export type UpdateAction = { type: UPDATE_GREETING, message: string };
+
+export default (message: string): UpdateAction => ({ type: UPDATE_GREETING, message });

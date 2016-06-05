@@ -1,7 +1,7 @@
 /* @flow */
 
-export type ClearAction = { type: "CLEAR_GREETING" };
+import { CLEAR_GREETING } from "../";
 
-export default function(): ClearAction {
-  return { type: "CLEAR_GREETING" };
-}
+export type ClearAction = { type: CLEAR_GREETING };
+
+export default (): ClearAction => ({ type: CLEAR_GREETING });

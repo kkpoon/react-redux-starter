@@ -1,7 +1,7 @@
 /* @flow */
 
-export type ChangeAction = { type: "CHANGE_LANGUAGE", locale: string };
+import { CHANGE_LANGUAGE } from "../";
 
-export default function(locale: string): ChangeAction {
-  return { type: "CHANGE_LANGUAGE", locale };
-}
+export type ChangeAction = { type: CHANGE_LANGUAGE, locale: string };
+
+export default (locale: string): ChangeAction => ({ type: CHANGE_LANGUAGE, locale });

@@ -1,9 +1,3 @@
-/*
- * this container conform the suggested pattern described in
- * https://rackt.org/redux/docs/basics/UsageWithReact.html
- *
- */
-
 import { connect } from "react-redux";
 
 import languageChange from "../actions/language/change";
