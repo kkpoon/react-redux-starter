@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { addLocaleData } from "react-intl";
-import { compose, createStore, combineReducers, applyMiddleware } from "redux";
 import { hashHistory, browserHistory } from "react-router";
+import { compose, createStore, combineReducers, applyMiddleware } from "redux";
 import { syncHistoryWithStore, routerReducer } from "react-router-redux";
+import createSagaMiddleware from 'redux-saga';
 
 import routes from "./routes";
 import * as reducers from "./reducers";
+import rootSaga from "./sagas";
 
 import Root from "./containers/root";
 
@@ -37,19 +39,23 @@ function bootstrap() {
   const createHistory = process.env.NODE_ENV === "production" ?
     hashHistory : browserHistory;
 
+  const sagaMiddleware = createSagaMiddleware();
+
   const store = createStore(
     combineReducers({
       ...reducers,
       routing: routerReducer,
     }),
     compose(
-      //applyMiddleware(),
+      applyMiddleware(sagaMiddleware),
       ...storeEnhancers
     )
   );
 
   const history = syncHistoryWithStore(createHistory, store);
-  
+
+  sagaMiddleware.run(rootSaga);
+
   ReactDOM.render(
     <Root store={store} history={history} routes={routes} extensions={extensions} />,
     document.getElementById("react-root")

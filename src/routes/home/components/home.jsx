@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import Helmet from "react-helmet";
 
-import GreetingContainer from '../../../containers/greeting';
-import LanguageContainer from "../../../containers/language";
+import Greeting from '../../../containers/greeting';
+import Language from "../../../containers/language";
+import Counter from "../../../containers/counter";
 
 class HomePage extends Component {
   render() {
     return (
       <div>
         <Helmet title="Home" />
-        <GreetingContainer />
-        <LanguageContainer />
+        <Greeting />
+        <Language />
+        <Counter />
       </div>
     );
   }

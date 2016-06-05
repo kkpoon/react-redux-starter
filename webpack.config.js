@@ -4,7 +4,7 @@ var webpack = require("webpack");
 module.exports = {
   devtool: "cheap-module-eval-source-map",
   name: "web",
-  entry: "./src/index.jsx",
+  entry: ["babel-polyfill", "./src/index.jsx"],
   resolve: {
     extensions: ["", ".js", ".jsx"]
   },
