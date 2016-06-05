@@ -1,12 +1,9 @@
-import Feature1 from "./feature1";
-import Feature2 from "./feature2";
+import Layout from "../components/layout";
 
 const rootRoute = {
-  component: "div",
+  component: Layout,
   childRoutes: [
     require("./home"),
-    { path: "/feature1", component: Feature1 },
-    { path: "/feature2", component: Feature2 },
   ],
 };
 

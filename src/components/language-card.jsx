@@ -1,36 +1,23 @@
-"use strict";
-
-import colors from "material-colors";
 import React, { Component, PropTypes } from "react";
-
-import { Card, CardTitle, CardText, RadioGroup, Radio } from "react-mdl";
 
 class LanguageCard extends Component {
 
   render() {
     const { locale } = this.props;
     return (
-      <Card shadow={2} style={{width: "100%"}}>
-        <CardTitle style={{
-          height: 150,
-          color: colors.white,
-          background: colors.blue[500]
-        }}>Language Options</CardTitle>
-        <CardText>
-          <RadioGroup name="lang"
-                      value={locale}
-                      onChange={(e) => this.handleLanguageSwitch(e)}>
-            <Radio value="en" ripple>En</Radio>
-            <Radio value="zh-Hans" ripple>繁</Radio>
-            <Radio value="zh-Hans-CN" ripple>简</Radio>
-          </RadioGroup>
-        </CardText>
-      </Card>
+      <div shadow={2} style={{width: "100%"}}>
+        <h2>Language Options</h2>
+        <div>
+          En <input type="radio" name="lang" checked={ locale === "en" } onChange={() => this.handleLanguageSwitch("en")}/><br/>
+          繁 <input type="radio" name="lang" checked={ locale === "zh-Hans" } onChange={() => this.handleLanguageSwitch("zh-Hans")}/><br/>
+          简 <input type="radio" name="lang" checked={ locale === "zh-Hans-CN" } onChange={() => this.handleLanguageSwitch("zh-Hans-CN")} /><br/>
+        </div>
+      </div>
     );
   }
 
-  handleLanguageSwitch(e) {
-    this.props.onLanguageSelect(e.target.value);
+  handleLanguageSwitch(lang) {
+    this.props.onLanguageSelect(lang);
   }
 }
 
