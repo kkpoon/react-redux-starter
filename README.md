@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/kkpoon/react-redux-boilerplate.svg?branch=master)](https://travis-ci.org/kkpoon/react-redux-boilerplate)
-[![Code Climate](https://codeclimate.com/github/kkpoon/react-redux-boilerplate/badges/gpa.svg)](https://codeclimate.com/github/kkpoon/react-redux-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/kkpoon/react-redux-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/kkpoon/react-redux-boilerplate?branch=master)
+[![Build Status](https://travis-ci.org/kkpoon/react-redux-starter.svg?branch=master)](https://travis-ci.org/kkpoon/react-redux-starter)
+[![Code Climate](https://codeclimate.com/github/kkpoon/react-redux-starter/badges/gpa.svg)](https://codeclimate.com/github/kkpoon/react-redux-starter)
+[![Coverage Status](https://coveralls.io/repos/github/kkpoon/react-redux-starter/badge.svg?branch=master)](https://coveralls.io/github/kkpoon/react-redux-starter?branch=master)
 
-# react-redux-boilerplate
+# react-redux-starter
 
-a boilerplate with react and redux, build with webpack and babel.
+a starter with react and redux, build with webpack and babel.
 
 - Build
   - Webpack
