@@ -1,4 +1,4 @@
-import Layout from "../components/layout";
+import Layout from "./layout/layout";
 
 const rootRoute = {
   component: Layout,

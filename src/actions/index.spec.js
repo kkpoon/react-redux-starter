@@ -1,7 +1,6 @@
 import { expect } from "chai";
 
-import updateGreeting from "./update";
-import clearGreeting from "./clear";
+import {updateGreeting, clearGreeting} from "./index";
 
 describe("greeting actions", () => {
   it("should create an action to update greeting message", () => {

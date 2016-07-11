@@ -16,7 +16,6 @@ a boilerplate with react and redux, build with webpack and babel.
   - karma
 
 - Quality Control
-  - flowtype
   - nyc
   - eslint
   - travis-ci

@@ -1,26 +1,26 @@
-import Immutable from "immutable";
+import { fromJS } from "immutable";
 
-import { CHANGE_LANGUAGE } from "../actions";
+import { CHANGE_LANGUAGE } from "../actions/constants";
 import trans from "../translations";
 
-const DefaultLanguage = {
+const initialState = fromJS({
   locale: "en",
   messages: {},
   key: "en",
-};
+});
 
-function language(state = Immutable.Map(DefaultLanguage), action) {
+function language(state = initialState, action) {
   switch (action.type) {
-  case CHANGE_LANGUAGE: {
-    const locale = action.locale;
-    return state
-          .set("locale", locale)
-          .set("key", locale)
-          .set("messages", trans[locale]);
-  }
-  default: {
-    return state;
-  }
+    case CHANGE_LANGUAGE: {
+      const locale = action.locale;
+      return state
+            .set("locale", locale)
+            .set("key", locale)
+            .set("messages", trans[locale]);
+    }
+    default: {
+      return state;
+    }
   }
 }
 

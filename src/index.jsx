@@ -10,7 +10,7 @@ import routes from "./routes";
 import * as reducers from "./reducers";
 import rootSaga from "./sagas";
 
-import Root from "./containers/root";
+import Root from "./root";
 
 import en from "react-intl/locale-data/en";
 import zh from "react-intl/locale-data/zh";

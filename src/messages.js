@@ -5,4 +5,8 @@ module.exports = defineMessages({
     id: "site.name",
     defaultMessage: "React Redux Boilerplate",
   },
+  greeting: {
+    id: "greeting",
+    defaultMessage: "Greeting",
+  },
 });
