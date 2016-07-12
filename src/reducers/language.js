@@ -1,6 +1,5 @@
 import { fromJS } from "immutable";
 
-import { CHANGE_LANGUAGE } from "../actions/constants";
 import trans from "../translations";
 
 const initialState = fromJS({
@@ -11,7 +10,7 @@ const initialState = fromJS({
 
 function language(state = initialState, action) {
   switch (action.type) {
-    case CHANGE_LANGUAGE: {
+    case "CHANGE_LANGUAGE": {
       const locale = action.locale;
       return state
             .set("locale", locale)

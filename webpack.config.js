@@ -6,7 +6,7 @@ module.exports = {
   name: "web",
   entry: ["babel-polyfill", "./src/index.jsx"],
   resolve: {
-    extensions: ["", ".js", ".jsx"]
+    extensions: ["", ".js", ".jsx", ".ts", ".tsx"]
   },
   output: {
     path: path.resolve(__dirname, "lib"),
@@ -15,6 +15,10 @@ module.exports = {
   },
   module: {
     loaders: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,

@@ -1,1 +1,1 @@
---compilers js:babel-register,jsx:babel-register
+--compilers js:babel-register,jsx:babel-register,ts:ts-node/register,tsx:ts-node/register
