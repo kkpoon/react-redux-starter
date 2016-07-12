@@ -1,27 +1,27 @@
 import * as C from "./constants";
 
-interface IncreaseCounterAction {
+export interface IncreaseCounterAction {
   type: C.INCREASE_COUNTER;
 }
 
-interface IncreaseCounterAsyncAction {
+export interface IncreaseCounterAsyncAction {
   type: C.INCREASE_COUNTER_ASYNC;
 }
 
-interface IncreasingCounterAction {
+export interface IncreasingCounterAction {
   type: C.INCREASING_COUNTER;
 }
 
-interface ClearGreetingAction {
+export interface ClearGreetingAction {
   type: C.CLEAR_GREETING;
 }
 
-interface UpdateGreetingAction {
+export interface UpdateGreetingAction {
   type: C.UPDATE_GREETING;
   message: string;
 }
 
-interface ChangeLanguageAction {
+export interface ChangeLanguageAction {
   type: C.CHANGE_LANGUAGE;
   locale: string;
 }

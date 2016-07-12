@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-import greeting from "./greeting";
+import { greeting } from "./greeting";
 
 describe("greeting reducer", () => {
   it("should return a state with new message", () => {
